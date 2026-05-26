@@ -6,31 +6,31 @@ let currentIndex = 0;
 /**
  * Updates the arrays with the current index variable
  */
-function updateData(){
-    schoolNames[currentIndex];
-    cities[currentIndex];
-    provinces[currentIndex];
-    countries[currentIndex];
-    schoolPictures[currentIndex];
-    mapPictures[currentIndex];
-    programNames[currentIndex];
-    lengthsOfPrograms[currentIndex];
-    programDescriptions[currentIndex];
-    coop[currentIndex];
-    admissionCoursesNeeded[currentIndex];
-    admissionAveragesNeeded[currentIndex];
-    domesticTuitions[currentIndex];
-    internationalTuitions[currentIndex];
-    academicCostDetails[currentIndex];
-    academicCosts[currentIndex];
-    livingCostDetails[currentIndex];
-    livingCosts[currentIndex];
-    interestingFacts[currentIndex];
-    primarySources1[currentIndex];
-    primarySources2[currentIndex];
-    primarySources3[currentIndex];
-    secondarySources1[currentIndex];
-    secondarySources2[currentIndex];
+function updateData(updateIndex){
+    schoolNames[updateIndex];
+    cities[updateIndex];
+    provinces[updateIndex];
+    countries[updateIndex];
+    schoolPictures[updateIndex];
+    mapPictures[updateIndex];
+    programNames[updateIndex];
+    lengthsOfPrograms[updateIndex];
+    programDescriptions[updateIndex];
+    coop[updateIndex];
+    admissionCoursesNeeded[updateIndex];
+    admissionAveragesNeeded[updateIndex];
+    domesticTuitions[updateIndex];
+    internationalTuitions[updateIndex];
+    academicCostDetails[updateIndex];
+    academicCosts[updateIndex];
+    livingCostDetails[updateIndex];
+    livingCosts[updateIndex];
+    interestingFacts[updateIndex];
+    primarySources1[updateIndex];
+    primarySources2[updateIndex];
+    primarySources3[updateIndex];
+    secondarySources1[updateIndex];
+    secondarySources2[updateIndex];
 }
 
 /**
@@ -40,7 +40,7 @@ function nextSchool(){
     //check if the current index is equal to or lower than the highest bound
     if (currentIndex <= numberOfSchools){
         currentIndex++
-        updateData();
+        updateData(currentIndex);
     }
 }
 
@@ -51,6 +51,6 @@ function prevSchool(){
     //check if the current index is equal to or higher than the lowest bound
     if (currentIndex >= 0){
         currentIndex--
-        updateData();
+        updateData(currentIndex);
     }
 }
