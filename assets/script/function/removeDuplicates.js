@@ -5,38 +5,34 @@
  * @param {Array} arr An array to remove duplicates from
  * @returns The array with no duplicate data
  */
-function removeDuplicates(arr){
-    //make is easier to remove duplicates
+export function removeDuplicates(arr) {
+    // sort array first to make it easier to find duplicate elements
     sortArray(arr);
 
-    //store only elements without any duplicates BUT it will be too big
-    //This means there will be undefined elements at the end.
-    //So it needs to be resized after all duplicates are removed
-    let newArr = new Array(arr.length);
+    /** result array -- copy of array without duplicates */
+    let resArr = new Array(arr.length);
 
-    //keep track of which index to copy into newArr
+    /** secondary iterator for traversing through resArr */
     let k = 0;
 
-    //put the first element of anArray into newArr
+    /** last element, for duplicates checking */
     let last = arr[0];
-    newArr[0] = last; 
+    resArr[0] = last; 
 
-    //go through the array, checking if the next element is equal
-    //to the lastElement -- if it is, don't copy
-    for (let i = 1; i < arr.length; i++){
-        if (arr[i] != last){
-            //go to the next empty spot in the newArr array
-            k++;
+    // iterate through original array
+    for (let i = 1; i < arr.length; i++) {
+        // copy over element if not duplicate
+        if (arr[i] != last) {
+            ++k;
             newArr[k] = arr[i];
             last = arr[i];
         }
     }
 
-    //newArr has all the data + a lot of undefined spaces
-    // The number of data copied is equal to k + 1
-    let finalArr = new Array(k + 1);
-    for (let i = 0; i < finalArr.length; i++){
-        finalArr[i] = newArr[i];
+    // pop empty space resulted from duplicate elements
+    for (let i = 0; i < arr.length-k-1; i++) {
+        resArr.mpop();
     }
-    return finalArr;
+    
+    return resArr;
 }
