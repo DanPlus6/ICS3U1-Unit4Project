@@ -22,36 +22,9 @@ function tuitionRanges(anArray, lowestInput, highestInput){
     for (let i; i < anArray.length; i++){
         //find if the current element is inside the ranges
         if (anArray[i] >= lowestInput && anArray[i] <= highestInput){
-            tuitionRanges[k] = anArray[i];
+            tuitionIndexes[k] = i;
             k++;
         }
     }
-    return tuitionRanges;
-}
-
-/**
- * Finds the indexes of program lengths that are equal to the amount that is being found
- * @param {Array} anArray an array to search through
- * @param {number} programLength the length being searched
- * @returns 0 if there is no program that matches this length -- an array containing the indexes of the array that matches to the amount if there are programs that matches
- */
-function programLengths(anArray, programLength){
-    //contains the amount of times the array matches the program length
-    let indexCount = countOccurrances(anArray, programLength, 0);
-    //if there is none that matches
-    if (indexCount == 0){
-        return 0;
-    }
-    //contains the indexes of the programs that matches the length being searched
-    let programIndexes = new Array(indexCount);
-    //secondary iterator to traverse through programIndexes array
-    let k = 0;
-    //traverse through the array to find which elements matches the length
-    for (let i; i < anArray.length; i++){
-        //find if the current element matches the length being searched for
-        if (anArray[i] == programLength){
-            programIndexes[k] = anArray[i];
-            k++;
-        }
-    }
+    return tuitionIndexes;
 }
