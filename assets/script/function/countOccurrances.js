@@ -7,7 +7,7 @@
  * @param {*} highestInput the highest range -- 0 if there is no highest range
  * @returns the amount of times it occurs 
  */
-function countOccurrances(anArray, lowestInput, highestInput){
+export function countOccurrances(anArray, lowestInput, highestInput){
     let countAmount = 0;
     //check if there is no highest input
     if (highestInput == 0){

@@ -1,6 +1,6 @@
 'use strict';
 
-function searchAllMatches(arr, searchVal){
+export function searchAllMatches(arr, searchVal) {
     //contains the amount of times the search value is found in the array
     let count = countOccurrances(arr, searchVal, 0);
     //search if search value was not found
