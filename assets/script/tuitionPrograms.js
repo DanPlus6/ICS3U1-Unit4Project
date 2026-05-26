@@ -43,10 +43,8 @@ function tuitionRanges(anArray, lowestInput, highestInput){
     if (indexCount == 0){
         return 0;
     }
-    else {
-        //contains the indexes of the tuitions that is inside the ranges
-        let tuitionIndexes = new Array(indexCount);
-    }
+    //contains the indexes of the tuitions that is inside the ranges
+    let tuitionIndexes = new Array(indexCount);
     //secondary iterator that traverses through the tuitionIndexes array
     let k = 0;
     //traverse through the array to find the indexes of tuition that are inside the ranges
@@ -73,10 +71,8 @@ function programLengths(anArray, programLength){
     if (indexCount == 0){
         return 0;
     }
-    else {
-        //contains the indexes of the programs that matches the length being searched
-        let programIndexes = new Array(indexCount);
-    }
+    //contains the indexes of the programs that matches the length being searched
+    let programIndexes = new Array(indexCount);
     //secondary iterator to traverse through programIndexes array
     let k = 0;
     //traverse through the array to find which elements matches the length

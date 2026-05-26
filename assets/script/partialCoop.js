@@ -12,10 +12,8 @@ function searchCoop(anArray){
     if (indexCount == 0){
         return 0;
     }
-    else {
-        //contains the indexes of universities / colleges with coop
-        let coopIndexes = new Array(indexCount);
-    }
+    //contains the indexes of universities / colleges with coop
+    let coopIndexes = new Array(indexCount);
     //secondary iterator to traverse through the coopIndexes array
     let k = 0;
     //traverse through the original array to find the indexes that has coop
