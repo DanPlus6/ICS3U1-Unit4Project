@@ -7,7 +7,7 @@
 export function sortArray(arr) {
     // iterate through array
     for (let i = 0; i < arr.length; i++) {
-        /** store index of our running minimum */
+        /** index of our running minimum */
         let minIdx = i;
 
         // iterate through right half of array
