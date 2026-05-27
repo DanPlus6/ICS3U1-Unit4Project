@@ -9,7 +9,7 @@ import { pop } from './pop.js';
  * @param {number} highestInput the highest range
  * @returns 0 if there is no index between these ranges, an array with the indexes if there are elements within these ranges
  */
-function tuitionRanges(anArray, lowestInput, highestInput){
+function rangeSearch(anArray, lowestInput, highestInput){
     // contains the amount of indexes within the ranges
     let indexCount = 0
     // contains the indexes inside the ranges
