@@ -1,9 +1,13 @@
 'use strict';
 
+import { pop } from './pop.js';
+
 /**
  * Removes all the duplicated data in an array
  * @param {Array} arr An array to remove duplicates from
  * @returns The array with no duplicate data
+ * 
+ * By: David Fu
  */
 export function removeDuplicates(arr) {
     // sort array first to make it easier to find duplicate elements
@@ -30,9 +34,7 @@ export function removeDuplicates(arr) {
     }
 
     // pop empty space resulted from duplicate elements
-    for (let i = 0; i < arr.length-k-1; i++) {
-        resArr.mpop();
-    }
+    for (let i = 0; i < arr.length-k-1; i++) pop(resArr);
     
     return resArr;
 }

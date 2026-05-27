@@ -2,6 +2,8 @@
 
 /**
  * Updates the arrays with the current index variable
+ * 
+ * By: Ian Choy
  */
 function updateData(updateIndex){
     schoolNames[updateIndex];
