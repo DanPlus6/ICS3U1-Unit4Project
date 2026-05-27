@@ -2,9 +2,9 @@
 
 /**
  * Finds the amount of times this event happens in an array
- * @param {*} anArray an array to search through
- * @param {*} lowestInput the lowest range -- or if there is no highest range, if the number is equal
- * @param {*} highestInput the highest range -- 0 if there is no highest range
+ * @param {Array} anArray an array to search through
+ * @param {number} lowestInput the lowest range -- or if there is no highest range, if the number is equal
+ * @param {number} highestInput the highest range -- 0 if there is no highest range
  * @returns the amount of times it occurs 
  */
 export function countOccurrances(anArray, lowestInput, highestInput){
