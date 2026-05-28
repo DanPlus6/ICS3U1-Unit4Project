@@ -2,8 +2,8 @@
 
 /**
  * Searches for occurences of a pattern in a text using the Knuth–Morris–Pratt algorithm
- * @param {*} txt Text to search in
- * @param {*} pat Pattern to search for in text
+ * @param {string} txt Text to search in
+ * @param {string} pat Pattern to search for in text
  * @returns {number[]} all indices in text where pattern match is found
  * 
  * By: David Fu
