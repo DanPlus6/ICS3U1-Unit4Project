@@ -5,7 +5,7 @@
  * @param {Array} array1 The first array
  * @param {Array} array2 The second array
  * @returns The bigger array
- * 
+ *  
  * By: Ian Choy
  */
 export function addArrays(array1, array2) {
