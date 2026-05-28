@@ -1,0 +1,32 @@
+{
+    "legacyIndex": 14,
+    "legacyFile": "brandonData.js",
+    "schoolName": "York University(Markham campus)",
+    "city": "Markham",
+    "province": "Ontario",
+    "country": "Canada",
+    "schoolPicture": "https://www.yorku.ca/markham/wp-content/uploads/sites/573/2024/10/Building320_zoomed.jpg",
+    "mapPicture": "https://www.yorku.ca/markham/wp-content/uploads/sites/573/2020/07/MAP_2019.07.30-CPA-Markham-1-pager.png",
+    "programName": "Computer Science for Software Development",
+    "lengthOfProgram": 4,
+    "programDescription": "You will be doing lots of hands-on stuff, for example you will be building real software, collaborating with teams, and developing technical and professional skills. Their curriculum centers on modern software development and has specialized course streams in cloud computing, cybersecurity, and data science. And it engages you with ethics, privacy and social responsibility.",
+    "hasCoop": true,
+    "admissionCoursesNeeded": "You need OSSD, ENG4U, MHF4U, SBI4U or SCH4U or SPH4U, and three additional 4U or M courses.",
+    "admissionAverageNeeded": "academic average should be in the low 80s. No prerequisites below 70%",
+    "domesticTuition": 9918,
+    "internationalTuition": 36955,
+    "academicCostDetails": "Text Books",
+    "academicCost": 1410,
+    "livingCostDetails": "Housing, meal Plan, personal expenses, and health and dental care together",
+    "livingCost": 20207,
+    "interestingFacts": "Exclusively offered in the Markham campus of York University. This is a 120 credit program or done in 8 terms. You get a bachelor of applied science in computer science for software development.",
+    "primarySources": [
+        "https://www.yorku.ca/markham/technology-software-data",
+        "https://futurestudents.yorku.ca/financing-your-degree/tuition-fees",
+        "https://futurestudents.yorku.ca/program/computer-science-for-software-development"
+    ],
+    "secondarySources": [
+        "https://www.ouinfo.ca/programs/york-markham/ymf",
+        "https://lassonde.yorku.ca/academics/computer-science-for-software-development"
+    ]
+}

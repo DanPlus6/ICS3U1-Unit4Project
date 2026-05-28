@@ -1,0 +1,32 @@
+{
+    "legacyIndex": 1,
+    "legacyFile": "radinData.js",
+    "schoolName": "McMaster University",
+    "city": "Hamilton",
+    "province": "Ontario",
+    "country": "Canada",
+    "schoolPicture": "https://president.mcmaster.ca/app/uploads/2025/06/ABC_7311rtuniveristyhallspring2020_jpg.jpg",
+    "mapPicture": "https://gs.mcmaster.ca/app/uploads/2019/07/map_of_hamilton.jpeg",
+    "programName": "Health Informatics",
+    "lengthOfProgram": 2,
+    "programDescription": "In Health Informatics at McMaster's University, students will learn to use technology, clinical guidelines, data systems, and information management to enhance the collection, storage, and use of data in the healthcare industry. In this program, students will use computers to examine the fundamental ethics, standards, and guidelines of health informatics, the technological methods of optimizing analysis design and implementation, and also learn how to manage health projects, quality control, and evaluate performance. These skills can be applied to any medical field, such as nursing, pharmacy, dentistry, public health, clinical care, medical research, physiotherapy, and more.",
+    "hasCoop": true,
+    "admissionCoursesNeeded": "This is a Master's degree, so what is required is a 4-year Bachelor's Degree in any major.<br><br>Common ones include:<br>Health Sciences<br>Computer Science<br>Life Sciences<br>Business<br><br>However, if you do not have experience in coding, you are required to take programming prep courses.",
+    "admissionAverageNeeded": 78,
+    "domesticTuition": 13000,
+    "internationalTuition": 36000,
+    "academicCostDetails": "$800 a year for textbooks and $1500 for co-op",
+    "academicCost": 2300,
+    "livingCostDetails": "Shared housing is around $1300 near campus monthly, food would be around $300 monthly, and entertainment is around $250 realistically for young students. Transportation depends if you actually need to go to campus or not for the internship program, however that could be around $100. Each month, students can look at around $1950",
+    "livingCost": 23400,
+    "interestingFacts": "<ol><li>The program is completely online! (In the exception of in-person experience for the internship stream, but other than that, all the courses taken are online)</li><li>This program is taught across 3 different departments: Health Sciences, Engineering, and Business.</li><li>It has the longest health informatics internship in all of Canada (8-months and paid!)</li></ol>",
+    "primarySources": [
+        "https://continuing.mcmaster.ca/programs/health-social-services/health-informatics/#tab-content-ov",
+        "https://continuing.mcmaster.ca/programs/health-social-services/health-informatics/#tab-content-diploma",
+        "https://continuing.mcmaster.ca/programs/health-social-services/health-informatics/schedule/"
+    ],
+    "secondarySources": [
+        "https://teaching.mcmaster.ca/app/uploads/2019/07/MSC-eHEALTH_2013.pdf",
+        "https://www.echima.ca/product/mcmaster-continuing-education-nihi-online-training-courses/"
+    ]
+}

@@ -1,0 +1,32 @@
+{
+    "legacyIndex": 7,
+    "legacyFile": "ianData.js",
+    "schoolName": "The University of Hong Kong: Department of Data and Systems Engineering",
+    "city": "Pok Fu Lam",
+    "province": "Hong Kong",
+    "country": "China",
+    "schoolPicture": "https://hkuvn.edu.vn/wp-content/uploads/2024/10/about-img2.png",
+    "mapPicture": "https://goglobal.ubc.ca/sites/default/files/styles/square_600/public/2024-08/University%20of%20Hong%20Kong.jpg?itok=TdKCS6ra",
+    "programName": "Bachelor of Engineering in Data and Systems Engineering",
+    "lengthOfProgram": 4,
+    "programDescription": "Students learn the fundamentals of system analysis and computiting disciplines, like operational research, mathematical and data-driven optimization, along with system simulation and modeling. Students are also introduced to artificial intelligence and intelligence system technologies.",
+    "hasCoop": true,
+    "admissionCoursesNeeded": "English<br>Chinese<br>Mathematics<br>Liberal Sciences / Citizenship and Social Development<br>Biology / Chemistry / Combined Science / Physics",
+    "admissionAverageNeeded": 75,
+    "domesticTuition": 8164.56,
+    "internationalTuition": 43254.04,
+    "academicCostDetails": "Learning materials and activities",
+    "academicCost": 17.52,
+    "livingCostDetails": "Living on campus and Average life of student living in Hong Kong",
+    "livingCost": 13482.74,
+    "interestingFacts": "<ol><li>University of Hong Kong is the top university in Asia and the 16th best university in the world</li><li>University of Hong Kong started as the Hong Kong College of Medicine for Chinese in 1887</li><li>University of Hong Kong is the oldest university in Hong Kong</li></ol>",
+    "primarySources": [
+        "https://www.dase.hku.hk/teaching-and-learning/current-students/bachelor-of-engineering-in-data-and-systems-engineering-beng-dase",
+        "https://admissions.hku.hk/apply/jupas",
+        "https://admissions.hku.hk/fees-and-scholarships/fees"
+    ],
+    "secondarySources": [
+        "https://laurenlovesnoodles.blogspot.com/2013/05/8-things-to-know-about-hku.html",
+        "https://kids.kiddle.co/University_of_Hong_Kong"
+    ]
+}

@@ -1,0 +1,32 @@
+{
+    "legacyIndex": 17,
+    "legacyFile": "ceciliaData.js",
+    "schoolName": "Ontario Tech University",
+    "city": "Oshawa",
+    "province": "Ontario",
+    "country": "Canada",
+    "schoolPicture": "https://shared.ontariotechu.ca/shared/ontario-tech/images/buildings/north-oshawa/library/150822-18_extended_sky-thumb.jpg",
+    "mapPicture": "https://boundlessmaps.com/wp-content/uploads/maps/sma/oshawa-10000-sma-fa7b5e-preview-2.png",
+    "programName": "Information Technology - Game Development and Interactive Media",
+    "lengthOfProgram": 4,
+    "programDescription": "You learn knowledge and skills that help with careers in the gaming, interactive media and simulation industries, or help with being an entrepreneur in charge of developing and managing a gaming/interactive media studio.",
+    "hasCoop": true,
+    "admissionCoursesNeeded": "Current Ontario secondary school students must complete the Ontario Secondary School Diploma (OSSD) with <br> six 4U or 4M credits including English (ENG4U) <br> and one of Advanced Functions (MHF4U), Calculus and Vectors (MCV4U) or Mathematics of Data Management (MDM4U) <br> or Computer Science (ICS4U)",
+    "admissionAverageNeeded": 65,
+    "domesticTuition": 9031.18,
+    "internationalTuition": 40915.66,
+    "academicCostDetails": "Ancillary fees and Technology",
+    "academicCost": 2365.45,
+    "livingCostDetails": "Cheapest Housing and Meal Options",
+    "livingCost": 10429,
+    "interestingFacts": "<ol><li>At the end of each year there is a gamecon for students to show what they've worked on</li><li>There are many entrepreneurship events for students to partake in</li><li>Labs and workshops where students can try different games and can create games are frequent</li></ol>",
+    "primarySources": [
+        "https://ontariotechu.ca/programs/undergraduate/computers-and-technology/information-technology-game-development-and-interactive-media/index.php",
+        "https://businessandit.ontariotechu.ca/undergraduate/bachelor-of-information-technology/game-development-and-interactive-media/index.php",
+        "https://registrar.ontariotechu.ca/fees-and-payment/tuition-calculator/index.php"
+    ],
+    "secondarySources": [
+        "https://www.cgspectrum.com/career-pathways/game-development",
+        "https://www.hotcoursesabroad.com/study/canada/school-college-university/ontario-tech-university/448650/international.html"
+    ]
+}
