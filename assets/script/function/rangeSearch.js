@@ -7,7 +7,7 @@ import { pop } from './pop.js';
  * @param {Array} anArray an array to search through
  * @param {number} lowestInput the lowest range
  * @param {number} highestInput the highest range
- * @returns 0 if there is no index between these ranges, an array with the indexes if there are elements within these ranges
+ * @returns -1 if there is no index between these ranges, an array with the indexes if there are elements within these ranges
  * 
  * By: Ian Choy
  */

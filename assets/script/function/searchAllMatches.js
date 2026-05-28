@@ -6,7 +6,7 @@ import { pop } from './pop.js';
  * Searches for all occurences of a value in an array
  * @param {Array} arr the input array
  * @param {*} searchVal the search value
- * @returns {number[]} all indices where value is found
+ * @returns {number[]} -1 if there are no indices where value is found -- all indices where value is found
  * 
  * By: Ian Choy
  */
