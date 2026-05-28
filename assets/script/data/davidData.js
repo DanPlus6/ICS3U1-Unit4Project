@@ -2,38 +2,38 @@
 
 const myIdx = 8;
 
-schoolNames[myIdx] =
+globalThis.schoolNames[myIdx] =
     `University of Waterloo`;
 
-cities[myIdx] =
+globalThis.cities[myIdx] =
     `Waterloo`;
 
-provinces[myIdx] =
+globalThis.provinces[myIdx] =
     `Ontario`;
 
-countries[myIdx] =
+globalThis.countries[myIdx] =
     `Canada`;
 
-schoolPictures[myIdx] =
+globalThis.schoolPictures[myIdx] =
     `https://commons.wikimedia.org/wiki/Special:FilePath/University%20of%20Waterloo%20campus.JPG`;
 
-mapPictures[myIdx] =
+globalThis.mapPictures[myIdx] =
     `https://i.imgur.com/8HweuU1.png`;
 
-programNames[myIdx] =
+globalThis.programNames[myIdx] =
     `Software Engineering`;
 
-lengthsOfPrograms[myIdx] =
+globalThis.lengthsOfPrograms[myIdx] =
     5;
 
-programDescriptions[myIdx] =
+globalThis.programDescriptions[myIdx] =
     `In the University of Waterloo Software Engineering program, you learn how to design, code, and manage complex software systems using programming, algorithms, and teamwork.<br><br>
     In first year, you take math, programming, chemistry, and digital logic courses to build a foundation. In upper years, you study data structures, algorithms, operating systems, databases, user-interface design, and large-scale software architecture, often through team projects that mirror real-world development. You also learn about software design, testing, and human-computer interaction. Specialization options include AI, HCI, business, and others.`;
 
-coop[myIdx] =
+globalThis.coop[myIdx] =
     true;
 
-admissionCoursesNeeded[myIdx] =
+globalThis.admissionCoursesNeeded[myIdx] =
     `Ontario Secondary School Diploma (OSSD) with 6 Grade 12 U/M courses, including:<br>
     ENG4U<br>
     MHF4U (Advanced Functions)<br>
@@ -45,45 +45,45 @@ admissionCoursesNeeded[myIdx] =
     Admission average: individual selection from the low to mid-90s.<br><br>
     Non-academic requirements: a mandatory Admission Information Form (AIF), an online Software Engineering interview, programming course or self-study experience, and demonstrated interest in solving open problems, debugging, testing code, and learning new software languages. Extracurricular involvement and math/computing contests such as the Euclid Mathematics Contest and Canadian Computing Competition are also considered.`;
 
-admissionAveragesNeeded[myIdx] =
+globalThis.admissionAveragesNeeded[myIdx] =
     95;
 
-domesticTuitions[myIdx] =
+globalThis.domesticTuitions[myIdx] =
     17666.0;
 
-internationalTuitions[myIdx] =
+globalThis.internationalTuitions[myIdx] =
     59000.0;
 
-academicCostDetails[myIdx] =
+globalThis.academicCostDetails[myIdx] =
     `Textbooks cost approximately $2,476 for one full year. Over the 5-year Software Engineering co-op program, that is about $12,380 total. Incidental fees, such as health/dental plans, a transit pass, recreation facilities, student clubs, and career advisors, are included in the tuition fee bill. Co-op students also pay a co-op fee each academic term, and international students must enroll in UHIP.`;
 
-academicCosts[myIdx] =
+globalThis.academicCosts[myIdx] =
     2476.0;
 
-livingCostDetails[myIdx] =
+globalThis.livingCostDetails[myIdx] =
     `On-campus residence costs about $4,127-$5,492 per term, with meal plans adding about $2,220-$4,600 per term. Off-campus housing costs about $827-$1,833 per month depending on size, location, and amenities. Other costs, including laundry, clothing, phone, internet, personal care, and entertainment, are about $4,000 per year. Total living expenses for two academic terms are estimated at about $16,000-$20,000.`;
 
-livingCosts[myIdx] =
+globalThis.livingCosts[myIdx] =
     18000.0;
 
-interestingFacts[myIdx] =
+globalThis.interestingFacts[myIdx] =
     `<ol>
         <li>The Waterloo Region is home to Google, Shopify, and more than 1,500 other technology companies, providing extensive co-op and career opportunities nearby.</li>
         <li>On average, Engineering co-op students earn $20-$30/hour per 4-month domestic work term, helping meaningfully offset tuition and living expenses.</li>
         <li>The University of Waterloo has been ranked the #1 most innovative university in Canada for 30 consecutive years by Maclean's University Rankings (2025).</li>
     </ol>`;
 
-primarySources1[myIdx] =
+globalThis.primarySources1[myIdx] =
     `https://uwaterloo.ca/future-students/programs/software-engineering`;
 
-primarySources2[myIdx] =
+globalThis.primarySources2[myIdx] =
     `https://uwaterloo.ca/future-students/admissions/admission-requirements/software-eng/high-school/domestic/ontario`;
 
-primarySources3[myIdx] =
+globalThis.primarySources3[myIdx] =
     `https://uwaterloo.ca/finance/student-financial-services/tuition-fee-schedules`;
 
-secondarySources1[myIdx] =
+globalThis.secondarySources1[myIdx] =
     `https://www.ouinfo.ca/programs/waterloo/wso`;
 
-secondarySources2[myIdx] =
+globalThis.secondarySources2[myIdx] =
     `https://www.youthfully.com/waterloo-engineering-definitive-guide/`;
