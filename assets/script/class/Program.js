@@ -5,6 +5,7 @@ export class Program {
     constructor(data) {
         this.legacyIndex = data.legacyIndex;
         this.legacyFile = data.legacyFile;
+
         this.schoolName = data.schoolName;
         this.city = data.city;
         this.province = data.province;
@@ -28,11 +29,13 @@ export class Program {
         this.secondarySources = data.secondarySources || [];
     }
 
+    /** callback to convert raw json data into a Program class */
     static fromJson(data) {
-        return new program(data);
+        return new Program(data);
     }
 
+    /** function to convert organized json array into Program classes */
     static fromJsonArray(programs) {
-        return programs.map((programData) => program.fromJson(programData));
+        return programs.map((programData) => Program.fromJson(programData));
     }
 }
