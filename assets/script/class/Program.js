@@ -1,6 +1,6 @@
 'use strict';
 
-export class program {
+export class Program {
     /** class to store research for a single university program */
     constructor(data) {
         this.legacyIndex = data.legacyIndex;
