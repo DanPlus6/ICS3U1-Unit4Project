@@ -1,6 +1,3 @@
-traversal - ian
-schools page - me
-fullsearches - me
-partial + coop - ian
-tuition ranges and program length - ian
-new programs and deleting programs -  me
+generator page for individual school - me
+all the searches (full, partial, tuition, length, coop) - me and ian
+new programs and deleting programs - ian and me
