@@ -1,5 +1,7 @@
 'use strict';
 
+import { getPrograms } from "./function/getPrograms.js";
+
 //traversal for the school pages
 let currentIndex = 0;
 
