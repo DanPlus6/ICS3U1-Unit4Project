@@ -10,15 +10,25 @@
 </head>
 <body>
     <div>
-        <input type = "text", id = "txt-input">
-        <button onclick = "showPartialSearch();">Partial Search</button>
-        <button onclick = "showCoop();">Co-op</button>
-        <button onclick = "showNonCoop()">Non Co-op</button>
-        <button onclick = "showLength();">Length of Program</button>
-        <input type = "number", id = "txt-upper-bound">
-        <input type = "number", id = "txt-lower-bound">
-        <button onclick = "showDomTuition();">Domestic Tuition</button>
-        <button onclick = "showIntTuition();">International Tuition</button>
+        <div>
+            <input type = "text", id = "txt-input">
+            <div>
+                <button onclick = "showPartialSearch();">Partial Search</button>
+                <button onclick = "showCoop();">Co-op</button>
+                <button onclick = "showNonCoop()">Non Co-op</button>
+                <button onclick = "showLength();">Length of Program</button>
+            </div>
+        </div>
+        <div>
+            <div>
+                <input type = "number", id = "txt-upper-bound">
+                <input type = "number", id = "txt-lower-bound">
+            </div>
+            <div>
+                <button onclick = "showDomTuition();">Domestic Tuition</button>
+                <button onclick = "showIntTuition();">International Tuition</button>
+            </div>
+        </div>
     </div>
     <script src = "assets/script/searches.js"></script>
 </body>
