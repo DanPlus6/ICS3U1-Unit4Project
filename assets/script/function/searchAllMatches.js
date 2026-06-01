@@ -24,7 +24,7 @@ export function searchAllMatches(arr, searchVal) {
             ++count;
         }
     }
-
+    //check if there are no elements that suffice the event
     if (count == 0) return -1;
     //iterator to remove undefined elements
     let k = arr.length;

@@ -24,7 +24,7 @@ function rangeSearch(anArray, lowestInput, highestInput) {
             ++indexCount;
         }
     }
-
+    //check if there are no elements that suffice the event
     if (indexCount == 0) return -1;
 
     // iterator to remove undefined elements
