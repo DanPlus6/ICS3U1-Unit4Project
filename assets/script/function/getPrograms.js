@@ -7,8 +7,11 @@ const PATH = '/assets/data/programs.json';
 
 let programs = null;
 
-/** Gets all the programs research data as an array of 'Program' objects */
-export async function getPrograms() {
+/** 
+ * Gets all the programs research data as an array of 'Program' objects
+ * @returns {programs[]} array containing all the program research data
+ */
+export function getPrograms() {
     if (programs) return programs;
 
     const r = await fetch(PATH);
