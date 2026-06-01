@@ -27,7 +27,9 @@ function rangeSearch(anArray, lowestInput, highestInput) {
 
     if (indexCount == 0) return -1;
 
-    for (indexCount; indexCount < anArray.length; indexCount++){ 
+    let k = anArray.length;
+
+    for (k; k > indexCount; k--){ 
         pop(rangeIndexes);
     } 
 

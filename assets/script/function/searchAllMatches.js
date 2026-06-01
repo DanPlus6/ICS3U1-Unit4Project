@@ -26,8 +26,12 @@ export function searchAllMatches(arr, searchVal) {
     }
 
     if (count == 0) return -1;
-
-    while (count--) pop(arr);
+    //iterator to remove undefined elements
+    let k = arr.length;
+    //count to remove the undefined elements
+    for (k; k > count; k--){
+        pop(arr);
+    } 
 
     return indexes;
 }
