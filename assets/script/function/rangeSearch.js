@@ -16,6 +16,15 @@ function rangeSearch(anArray, lowestInput, highestInput) {
     let rangeIndexes = new Array(anArray.length);
     // secondary iterator that traverses through the rangeIndexes array -- contains the amont of index within the ranges
     let indexCount = 0;
+
+    //check if the lowest input is larger than the highest input
+    if (lowestInput > highestInput){
+        //contains the lowest input for swaping
+        let temp = lowestInput;
+        lowestInput = highestInput;
+        highestInput = temp;
+    }
+
     // traverse through the array to find the indexes that are inside the ranges
     for (let i; i < anArray.length; i++) {
         // find if the current element is inside the ranges
