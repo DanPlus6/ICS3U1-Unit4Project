@@ -6,55 +6,58 @@
     
     <link rel="stylesheet" href="assets/css/global.css">
     <link rel="stylesheet" href="assets/css/school.css">
-
-    <title>Bernie Liu is a bum</title>
 </head>
 <body>
-    <h1></h1>
-    <div>
-        <div>
-            <p id = "schoolName"></p>
-            <p id = "city"></p>
-            <p id = "province"></p>
-            <div>
-                <img id = "schoolPicture">
-                <img id = "mapPicture">
+    <div class="program-info">
+        <div class="general-info">
+            <h1 id="schoolName"></h1>
+            <h2 id="city"></h2>
+            <h2 id="province"></h2>
+        </div>
+
+        <div class="program-imgs">
+            <img id="schoolPicture">
+            <img id="mapPicture">
+        </div>
+
+        <div class="details">
+            <p id="programName"></p>
+            <p id="lengthOfProgram"></p>
+            <p id="programDescription"></p>
+            <p id="hasCoop"></p>
+            <p id="admissionCoursesNeeded"></p>
+            <p id="admissionAverageNeeded"></p>
+            <p id="domesticTuition"></p>
+            <p id="internationalTuition"></p>
+            <p id="academicCostDetails"></p>
+            <p id="academicCost"></p>
+            <p id="livingCostDetails"></p>
+            <p id="livingCost"></p>
+            <div id="interstingFacts"></div>
+        </div>
+
+        <div class="research-sources">
+            <div class="primary-sources">
+                <ul class="research-source-list">
+                    <li><p><a id="primarySource1"></a></p></li>
+                    <li><p><a id="primarySource2"></a></p></li>
+                    <li><p><a id="primarySource3"></a></p></li>
+                </ul>
             </div>
-            <p id = "programName"></p>
-            <p id = "lengthOfProgram"></p>
-            <p id = "programDescription"></p>
-            <p id = "hasCoop"></p>
-            <p id = "admissionCoursesNeeded"></p>
-            <p id = "admissionAverageNeeded"></p>
-            <p id = "domesticTuition"></p>
-            <p id = "internationalTuition"></p>
-            <p id = "academicCostDetails"></p>
-            <p id = "academicCost"></p>
-            <p id = "livingCostDetails"></p>
-            <p id = "livingCost"></p>
-            <div id = "interstingFacts"></div>
-            <p></p>
-            <div>
-                <div>
-                    <ul>
-                        <li><p><a id = "primarySource1"></a></p></li>
-                        <li><p><a id = "primarySource2"></a></p></li>
-                        <li><p><a id = "primarySource3"></a></p></li>
-                    </ul>
-                </div>
-                <div>
-                    <ul>
-                        <li><p><a id = "secondarySource1"></a></p></li>
-                        <li><p><a id = "secondarySource2"></a></p></li>
-                        <li><p><a id = "secondarySource3"></a></p></li>
-                    </ul>
-                </div>
+            <div class="secondary-sources">
+                <ul class="research-source-list">
+                    <li><p><a id="secondarySource1"></a></p></li>
+                    <li><p><a id="secondarySource2"></a></p></li>
+                    <li><p><a id="secondarySource3"></a></p></li>
+                </ul>
             </div>
         </div>
     </div>
-    <div>
-        
-    </div>
-    <script src = "assets/script/traversal.js"></script>
+    <span class="traversal-buttons">
+        <button onclick="next"><</button>
+        <button >></button>
+    </span>
+    
+    <script src="assets/script/school.js"></script>
 </body>
 </html>
