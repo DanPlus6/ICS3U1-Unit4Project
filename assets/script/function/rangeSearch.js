@@ -12,24 +12,24 @@ import { pop } from './pop.js';
  * By: Ian Choy
  */
 function rangeSearch(anArray, lowestInput, highestInput) {
-    // contains the amount of indexes within the ranges
-    let indexCount = 0;
     // contains the indexes inside the ranges
     let rangeIndexes = new Array(anArray.length);
-    // secondary iterator that traverses through the rangeIndexes array
-    let k = 0;
+    // secondary iterator that traverses through the rangeIndexes array -- contains the amont of index within the ranges
+    let indexCount = 0;
     // traverse through the array to find the indexes that are inside the ranges
     for (let i; i < anArray.length; i++) {
         // find if the current element is inside the ranges
         if (anArray[i] >= lowestInput && anArray[i] <= highestInput) {
-            rangeIndexes[k] = i;
-            ++k;
+            rangeIndexes[indexCount] = i;
+            ++indexCount;
         }
     }
 
     if (indexCount == 0) return -1;
 
-    while (indexCount--) pop(rangeIndexes);
+    for (indexCount; indexCount < anArray.length; indexCount++){ 
+        pop(rangeIndexes);
+    } 
 
     return rangeIndexes;
 }
