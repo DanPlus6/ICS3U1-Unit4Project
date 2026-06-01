@@ -27,8 +27,10 @@ function rangeSearch(anArray, lowestInput, highestInput) {
 
     if (indexCount == 0) return -1;
 
+    // iterator to remove undefined elements
     let k = anArray.length;
 
+    // find the difference between the current count and the array length
     for (k; k > indexCount; k--){ 
         pop(rangeIndexes);
     } 
