@@ -14,9 +14,11 @@ const urlParams = new URLSearchParams(window.location.search);
 let idx = urlParams.get('idx');
 
 // get the HTML elements
+// program general info
 const SCHOOL_NAME = document.getElementById('schoolName');
 const CITY = document.getElementById('city');
 const PROVINCE = document.getElementById('province');
+
 const SCHOOL_PIC = document.getElementById('schoolPicture');
 const MAP_PIC = document.getElementById('mapPicture');
 const PROGRAM_NAME = document.getElementById('programName');
@@ -86,3 +88,10 @@ function prev() {
         updateData(programs[--idx]);
     }
 }
+
+/** callback to attach event listeners as this script is included as a module script */
+function attachListeners() {
+
+}
+document.addEventListener("DOMContentLoaded", (event) => attachListeners());
+

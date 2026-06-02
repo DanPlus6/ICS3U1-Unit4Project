@@ -1,7 +1,10 @@
 'use strict';
 
 export class Program {
-    /** class to store research for a single university program */
+    /** 
+     * class to store research for a single university program 
+     * @param {JSON} data
+     */
     constructor(data) {
         this.legacyIndex = data.legacyIndex;
         this.legacyFile = data.legacyFile;
@@ -29,12 +32,20 @@ export class Program {
         this.secondarySources = data.secondarySources || [];
     }
 
-    /** callback to convert raw json data into a Program class */
+    /** 
+     * callback to convert raw json data into a Program class
+     * @param {JSON} data raw json data
+     * @returns {Program} a new Program class from raw data
+     */
     static fromJson(data) {
         return new Program(data);
     }
 
-    /** function to convert organized json array into Program classes */
+    /** 
+     * function to convert organized json array into Program classes
+     * @param {JSON[]} programs array of raw json data
+     * @returns {Program[]} array of Program objects
+     */
     static fromJsonArray(programs) {
         return programs.map((programData) => Program.fromJson(programData));
     }
