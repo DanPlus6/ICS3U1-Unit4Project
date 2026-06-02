@@ -17,7 +17,8 @@ const TXT_INPUT = document.getElementById('txt-input');
 const TT_UPPER_BOUND = document.getElementById('tt-upper-bound');
 const TT_LOWER_BOUND = document.getElementById('tt-lower-bound');
 const PROGRAM_LENGTH = document.getElementById('program-length');
-const BTN_SWAP_TUITION = document.getElementById('btn-swap-tuition')
+const BTN_SWAP_TUITION = document.getElementById('btn-swap-tuition');
+const P_OUTPUT = document.getElementById('p-output');
 
 //contain the array with all the indexes that fulfills all searches
 let searchResult;
