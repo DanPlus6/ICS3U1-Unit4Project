@@ -179,7 +179,7 @@ function showAllSearches(){
     let secondarySearch;
     //contains the common elements between the original search and first filter
     let commonSearch;
-    //check if the user did not have a partial search
+    //check if the user did not input a partial search
     if (userInput == ''){
         //check if the user did not input anything into tuition search
         if (TT_LOWER_BOUND == '' && TT_UPPER_BOUND == ''){
@@ -235,7 +235,7 @@ function showAllSearches(){
                 }
                 else {
                     //contains the starting search
-                    let originalSearch = domTuitionSearch();
+                    let originalSearch = intTuitionSearch();
                     //contains the first filter
                     secondarySearch = lengthSearch();
                     //contains the common elements between the original search and first filter
@@ -265,6 +265,7 @@ function showAllSearches(){
         }
     }
     else {
+        //contains the starting search
         let originalSearch = partialSearch();
         if (TT_LOWER_BOUND == '' && TT_UPPER_BOUND == ''){
             //contains the first filter
@@ -292,8 +293,11 @@ function showAllSearches(){
                 pop(commonSearch);
             }
         }
+        //check if the user has no input in program length
         else if (PROGRAM_LENGTH == ''){
+            //check if the user has inputs in both the upper and lower bound along with them being numbers
             if (TT_LOWER_BOUND != '' && TT_UPPER_BOUND != '' && !NaN(TT_LOWER_BOUND.value) && !NaN(TT_UPPER_BOUND.value)){
+                //check if the user has domesitic tuition chosen
                 if (domesticChose){
                     //contains the first filter
                 secondarySearch = domTuitionSearch();
@@ -353,7 +357,9 @@ function showAllSearches(){
             }
         }
         else {
+            //check if the user has inputs in both the upper and lower bound and they are both numbers
             if (TT_LOWER_BOUND != '' && TT_UPPER_BOUND != '' && !NaN(TT_LOWER_BOUND.value) && !NaN(TT_UPPER_BOUND.value)){
+                //check if the user has domestic tution selected
                 if (domesticChose){
                     //contains the first filter
                     secondarySearch = domTuitionSearch();
@@ -432,7 +438,7 @@ function showAllSearches(){
                 }
             }
             else {
-
+                
             }
         }
     }
