@@ -13,12 +13,12 @@ const urlParams = new URLSearchParams(window.location.search);
 /** index for traversing through the programs */
 let idx = urlParams.get('idx');
 
-// get the HTML elements
+// --- HTML targets ---
 // program general info
 const SCHOOL_NAME = document.getElementById('schoolName');
 const CITY = document.getElementById('city');
 const PROVINCE = document.getElementById('province');
-
+// program details
 const SCHOOL_PIC = document.getElementById('schoolPicture');
 const MAP_PIC = document.getElementById('mapPicture');
 const PROGRAM_NAME = document.getElementById('programName');
@@ -36,6 +36,10 @@ const LIVING_COST = document.getElementById('livingCost');
 const INTERESTING_FACTS = document.getElementById('interstingFacts');
 const PRIMARY_SOURCES = document.getElementById('primary-sources');
 const SECONDARY_SOURCES = document.getElementById('secondary-sources');
+// traversal buttons
+const BTN_NXT = document.getElementById('btn-next');
+const BTN_PRV = document.getElementById('btn-prev');
+
 
 /** 
  * Updates current webpage to display info of current program
@@ -73,7 +77,8 @@ function updateData(program) {
  * Increases the current index by 1 to show the next school
  */
 function next() {
-    //check if the current index is equal to or lower than the highest bound
+    console.log('hello world');
+    // check if the current index is equal to or lower than the highest bound
     if (idx <= programs.length) {
         updateData(programs[++idx]);
     }
@@ -83,7 +88,8 @@ function next() {
  * Increases the current index by 1 to show the previous school
  */
 function prev() {
-    //check if the current index is equal to or higher than the lowest bound
+    console.log('hell world');
+    // check if the current index is equal to or higher than the lowest bound
     if (idx >= 0) {
         updateData(programs[--idx]);
     }
@@ -91,7 +97,11 @@ function prev() {
 
 /** callback to attach event listeners as this script is included as a module script */
 function attachListeners() {
-
+    BTN_NXT.addEventListener("click",next);
+    BTN_PRV.addEventListener("click",prev);
 }
-document.addEventListener("DOMContentLoaded", (event) => attachListeners());
+document.addEventListener("DOMContentLoaded", (event) => {
+    attachListeners(); 
+    console.log(JSON.parse(JSON.stringify(programs)));
+});
 
