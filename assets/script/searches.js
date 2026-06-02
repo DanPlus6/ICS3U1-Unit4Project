@@ -174,6 +174,9 @@ function lengthSearch(){
     }
 }
 
+/**
+ * Determines which searches to filter and displays it
+ */
 function showAllSearches(){
     //contains the first filter
     let secondarySearch;
