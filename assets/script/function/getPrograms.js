@@ -17,7 +17,7 @@ export function getPrograms() {
     const r = await fetch(PATH);
     const raw = r.json();
 
-    programs = Program.fromJsonArray(raw);
+    programs = Program.fromJsonArray(raw) + JSON.parse(localStorage.getItem("programs") || "[]");
     
     return programs;
 }
