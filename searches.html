@@ -12,7 +12,7 @@
     <div>
         <div class="search-bar">
             <input type = "text", id = "txt-input" placeholder="Search for a program...">
-            <button onclick="execSearch()"></button>
+            <button onclick="execSearch()">Search</button>
             <!-- <div>
                 <button onclick = "showPartialSearch();">Partial Search</button>
                 <button onclick = "showCoop();">Co-op</button>
@@ -22,15 +22,15 @@
         </div>
         <div>
             <div>
-                <input type = "number", id = "tt-upper-bound">
-                <input type = "number", id = "tt-lower-bound">
+                <input type = "number", id = "tt-upper-bound" placeholder="Upperbound of Tuition">
+                <input type = "number", id = "tt-lower-bound" placeholder="Lowerbound of Tuition">
             </div>
             <div>
                 <button onclick = "swapTuition();" id="btn-swap-tuition">Domestic Tuition</button>
             </div>
         </div>
         <div>
-            <input type = "number", id = "program-length">
+            <input type = "number", id = "program-length" placeholder="Length of Program">
         </div>
     </div>
     <script src = "assets/script/searches_new.js"></script>
