@@ -187,7 +187,10 @@ function showAllSearches(){
     const lowerBound = TT_LOWER_BOUND.value;
     const upperBound = TT_UPPER_BOUND.value;
     const lengthSearch = PROGRAM_LENGTH.value;
-    if (userInput == '' )
+    //check if the user has nothing inputed
+    if (userInput == '' && lowerBound == '' && upperBound == '' && lengthSearch == ''){
+
+    }
     //check if the user did not input a partial search
     if (userInput == ''){
         //check if the user did not input anything into tuition search
