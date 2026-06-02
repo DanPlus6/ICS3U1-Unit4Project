@@ -179,17 +179,23 @@ function showAllSearches(){
     let secondarySearch;
     //contains the common elements between the original search and first filter
     let commonSearch;
+    //contains the user input
+    const userInput = TXT_INPUT.value;
+    const lowerBound = TT_LOWER_BOUND.value;
+    const upperBound = TT_UPPER_BOUND.value;
+    const lengthSearch = PROGRAM_LENGTH.value;
+    if (userInput == '' )
     //check if the user did not input a partial search
     if (userInput == ''){
         //check if the user did not input anything into tuition search
-        if (TT_LOWER_BOUND == '' && TT_UPPER_BOUND == ''){
+        if (lowerBound == '' && upperBound == ''){
             //contains the starting search
             let originalSearch = lengthSearch();
         }
         //check if the user did not input anything into length search
-        else if (PROGRAM_LENGTH == ''){
+        else if (lengthSearch == ''){
             //check if both the upper and lower bound has inputs and are numbers
-            if (TT_LOWER_BOUND != '' && TT_UPPER_BOUND != '' && !NaN(TT_LOWER_BOUND.value) && !NaN(TT_UPPER_BOUND.value)){
+            if (lowerBound != '' && upperBound != '' && !NaN(lowerBound) && !NaN(upperBound)){
                 //check if the user chose domestic tuition
                 if (domesticChose){
                     //contains the starting search
@@ -203,7 +209,7 @@ function showAllSearches(){
         }
         else {
             //check if the inputed into both the upper bound and lower bound and they are numbers
-            if (TT_LOWER_BOUND != '' && TT_UPPER_BOUND != '' && !NaN(TT_LOWER_BOUND.value) && !NaN(TT_UPPER_BOUND.value)){
+            if (lowerBound != '' && upperBound != '' && !NaN(lowerBound) && !NaN(upperBound)){
                 //check if the user chose domestic search
                 if (domesticChose){
                     //contains the starting search
@@ -267,7 +273,7 @@ function showAllSearches(){
     else {
         //contains the starting search
         let originalSearch = partialSearch();
-        if (TT_LOWER_BOUND == '' && TT_UPPER_BOUND == ''){
+        if (lowerBound == '' && upperBound == ''){
             //contains the first filter
             secondarySearch = lengthSearch();
             //contains the common elements between the original search and the filter
@@ -294,9 +300,9 @@ function showAllSearches(){
             }
         }
         //check if the user has no input in program length
-        else if (PROGRAM_LENGTH == ''){
+        else if (lengthSearch == ''){
             //check if the user has inputs in both the upper and lower bound along with them being numbers
-            if (TT_LOWER_BOUND != '' && TT_UPPER_BOUND != '' && !NaN(TT_LOWER_BOUND.value) && !NaN(TT_UPPER_BOUND.value)){
+            if (lowerBound != '' && upperBound != '' && !NaN(lowerBound) && !NaN(upperBound)){
                 //check if the user has domesitic tuition chosen
                 if (domesticChose){
                     //contains the first filter
@@ -358,7 +364,7 @@ function showAllSearches(){
         }
         else {
             //check if the user has inputs in both the upper and lower bound and they are both numbers
-            if (TT_LOWER_BOUND != '' && TT_UPPER_BOUND != '' && !NaN(TT_LOWER_BOUND.value) && !NaN(TT_UPPER_BOUND.value)){
+            if (lowerBound != '' && upperBound != '' && !NaN(lowerBound) && !NaN(upperBound)){
                 //check if the user has domestic tution selected
                 if (domesticChose){
                     //contains the first filter
