@@ -7,5 +7,5 @@ import { Program } from "../class/Program.js";
  * @returns {Program[]} array of programs saved to localstorage
  */
 export function getLocal() {
-    return JSON.parse(localStorage.getItem("programs") || "[]");
+    return Program.fromJsonArray(JSON.parse(localStorage.getItem("programs") || "[]"));
 }
