@@ -2,6 +2,7 @@
 
 import { Program } from "./class/Program.js";
 import { getPrograms } from "./function/getPrograms.js";
+import { redirect404 } from "./function/redirect404.js";
 
 /** 
  * array storing programs to traverse through
@@ -46,6 +47,11 @@ const BTN_PRV = document.getElementById('btn-prev');
  * @param {Program} program current program
  */
 function updateData(program) {
+    if (!program) {
+        redirect404();
+        return;
+    }
+
     document.title = program.programName;
     
     SCHOOL_NAME.innerHTML = program.schoolName;
