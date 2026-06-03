@@ -1,6 +1,7 @@
 'use strict';
 
 import { Program } from "../class/Program.js";
+import { fetchJSON } from "./fetchJSON.js";
 
 const PATH = '/assets/data/programs.json';
 
@@ -14,8 +15,7 @@ let programs = null;
 export async function getPrograms() {
     if (programs) return programs;
 
-    const r = await fetch(PATH);
-    const raw = r.json();
+    const raw = fetchJSON(PATH);
 
     programs = Program.fromJsonArray(raw) + JSON.parse(localStorage.getItem("programs") || "[]");
     
