@@ -7,11 +7,11 @@ import { getPrograms } from "./function/getPrograms.js";
  * array storing programs to traverse through
  * @type {Program[]}
  */
-const programs = getPrograms();
+let programs = [];
 
 const urlParams = new URLSearchParams(window.location.search);
 /** index for traversing through the programs */
-let idx = urlParams.get('idx');
+let idx = Number.parseInt(urlParams.get('idx'), 10);
 
 // --- HTML targets ---
 // program general info
@@ -77,20 +77,18 @@ function updateData(program) {
  * Increases the current index by 1 to show the next school
  */
 function next() {
-    console.log('hello world');
     // check if the current index is equal to or lower than the highest bound
-    if (idx <= programs.length) {
+    if (idx < programs.length - 1) {
         updateData(programs[++idx]);
     }
 }
 
 /**
- * Increases the current index by 1 to show the previous school
+ * Decreases the current index by 1 to show the previous school
  */
 function prev() {
-    console.log('hell world');
     // check if the current index is equal to or higher than the lowest bound
-    if (idx >= 0) {
+    if (idx > 0) {
         updateData(programs[--idx]);
     }
 }
@@ -100,8 +98,21 @@ function attachListeners() {
     BTN_NXT.addEventListener("click",next);
     BTN_PRV.addEventListener("click",prev);
 }
-document.addEventListener("DOMContentLoaded", (event) => {
-    attachListeners(); 
-    console.log(JSON.parse(JSON.stringify(programs)));
-});
 
+/** async callback to run once page loads */
+async function init() {
+    // fetch university programs
+    programs = await getPrograms();
+
+    // set starting index for display and traversal
+    if (Number.isNaN(idx)) idx = Math.floor(programs.length/2);
+    idx = Math.max(0, Math.min(idx, programs.length-1));
+
+    // load the university program's data onto the site
+    updateData(programs[idx]);
+    // attaches event listeners
+
+    attachListeners();
+}
+
+document.addEventListener("DOMContentLoaded", init);
