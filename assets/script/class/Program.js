@@ -46,7 +46,11 @@ export class Program {
      * @param {string[]} jsonArr array of raw json data
      * @returns {Program[]} parsed array of Program objects
      */
-    static fromJsonArray(programs) {
-        return programs.map((programData) => Program.fromJson(programData));
+    static fromJsonArray(jsonArr) {
+        /** array to store json data parsed into Program objects */
+        let parsedArr = new Array(jsonArr.length);
+        // iterate through and parse raw data into Program objects
+        for (let i=0;i<jsonArr.length;i++) parsedArr[i] = Program.fromJson(jsonArr[i]);
+        return parsedArr;
     }
 }
