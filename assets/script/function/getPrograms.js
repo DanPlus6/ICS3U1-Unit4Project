@@ -3,6 +3,7 @@
 import { Program } from "../class/Program.js";
 import { loadJSON } from "./loadJSON.js";
 import { addArrays } from "./addArrays.js";
+import { getLocal } from "./getLocal.js";
 
 const PATH = '/assets/data/programs.json';
 
@@ -17,7 +18,7 @@ export async function getPrograms() {
     if (programs) return programs;
 
     const raw = await loadJSON(PATH);
-    const savedPrograms = JSON.parse(localStorage.getItem("programs") || "[]");
+    const savedPrograms = getLocal();
 
     programs = addArrays(Program.fromJsonArray(raw), Program.fromJsonArray(savedPrograms));
     
