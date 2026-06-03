@@ -1,0 +1,26 @@
+'use strict';
+
+schoolNames[8] ='University of Waterloo';
+cities[8] = 'Waterloo';
+provinces[8] = 'Ontario';
+countries[8] = 'Canada';
+schoolPictures[8] = 'https://commons.wikimedia.org/wiki/Special:FilePath/University%20of%20Waterloo%20campus.JPG';
+mapPictures[8] = 'https://i.imgur.com/8HweuU1.png';
+programNames[8] = 'Software Engineering';
+lengthsOfPrograms[8] = 5;
+programDescriptions[8] = 'In the University of Waterloo Software Engineering program, you learn how to design, code, and manage complex software systems using programming, algorithms, and teamwork.<br><br>In first year, you take math, programming, chemistry, and digital logic courses to build a foundation. In upper years, you study data structures, algorithms, operating systems, databases, user-interface design, and large-scale software architecture, often through team projects that mirror real-world development. You also learn about software design, testing, and human-computer interaction. Specialization options include AI, HCI, business, and others.';
+coop[8] = true;
+admissionCoursesNeeded[8] = 'Ontario Secondary School Diploma (OSSD) with 6 Grade 12 U/M courses, including:<br>ENG4U<br>MHF4U (Advanced Functions)<br>MCV4U (Calculus and Vectors)<br>SPH4U (Physics)<br>SCH4U (Chemistry)<br>One additional Grade 12 U/M course<br><br>Minimum final grade of 70% is required in each of the 6 U/M courses.<br>Admission average: individual selection from the low to mid-90s.<br><br>Non-academic requirements: a mandatory Admission Information Form (AIF), an online Software Engineering interview, programming course or self-study experience, and demonstrated interest in solving open problems, debugging, testing code, and learning new software languages.';
+admissionAveragesNeeded[8] = 95;
+domesticTuitions[8] = 17666.0;
+internationalTuitions[8] = 59000.0;
+academicCostDetails[8] = 'Textbooks, Incidental Fees, Co-op Fees';
+academicCosts[8] = 2476.0;
+livingCostDetails[8] = 'Residence, Meal Plan, Off-campus Housing, Personal Expenses';
+livingCosts[8] = 18000.0;
+interestingFacts[8] = '<ol><li>The Waterloo Region is home to Google, Shopify, and more than 1,500 other technology companies, providing extensive co-op and career opportunities nearby.</li><li>On average, Engineering co-op students earn $20-$30/hour per 4-month domestic work term, helping meaningfully offset tuition and living expenses.</li><li>The University of Waterloo has been ranked the #1 most innovative university in Canada for 30 consecutive years by Maclean\'s University Rankings (2025).</li></ol>';
+primarySources1[8] = 'https://uwaterloo.ca/future-students/programs/software-engineering';
+primarySources2[8] = 'https://uwaterloo.ca/future-students/admissions/admission-requirements/software-eng/high-school/domestic/ontario';
+primarySources3[8] = 'https://uwaterloo.ca/finance/student-financial-services/tuition-fee-schedules';
+secondarySources1[8] = 'https://www.ouinfo.ca/programs/waterloo/wso';
+secondarySources2[8] = 'https://www.youthfully.com/waterloo-engineering-definitive-guide/';

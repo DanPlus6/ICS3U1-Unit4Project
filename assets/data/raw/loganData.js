@@ -1,0 +1,24 @@
+schoolNames[6] = 'The University of Hong Kong';
+cities[6] = 'Pok Fu Lam';
+provinces[6] = 'Hong Kong Island';
+schoolPictures[6] = 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/51/08/85/caption.jpg';
+mapPictures[6] = 'https://goglobal.ubc.ca/sites/default/files/styles/square_600/public/2024-08/University%20of%20Hong%20Kong.jpg';
+programNames[6] = 'Computing and data science';
+lengthsOfPrograms[6] = 4;
+programDescriptions[6] = 'The Bachelor of Engineering in Computer Science covers a comprehensive curriculum that includes fundamental concepts such as mathematics, programming languages, algorithms, and data structures, as well as advanced topics such as computer organization, software engineering, and artificial intelligence. Students can specialize in areas such as AI and robotics, big data analytics, cybersecurity, financial computing, systems and networking, and theoretical computer science, and benefit from opportunities for hands-on learning and project-based work.';
+coop[6] = true;
+admissionCoursesNeeded[6] = 'Chinese language level 3 english language level 3 math level 3 Attained citizenship and social developmentLevel 3 on an elective'
+;
+admissionAveragesNeeded[6] = 95;
+domesticTuitions[6] = 7860;
+internationalTuitions[6] = 38493.65;
+academicCostDetails[6] = 'textbooks';
+academicCosts[6] = 950;
+livingCostDetails[6] = 'housing, meals, entertainment';
+livingCosts[6] = 12000;
+interestingFacts[6] = 'You can choose between 2 degrees when you graduate The program is very new Some students are granted access to study at shanghai'
+primarySources1[6] = 'https://admissions.hku.hk/programmes/undergraduate-programmes/computing-and-data-science'
+primarySources2[6] = 'www.cds.hku.hk'
+primarySources3[6] = 'www.cds.hku.hk/prospective-students/undergraduate/6999-computing-and-data-science'
+secondarySources1[6] = 'about:blank'
+secondarySources2[6] = 'about:blank'
