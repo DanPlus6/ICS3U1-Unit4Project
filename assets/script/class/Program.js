@@ -2,8 +2,8 @@
 
 export class Program {
     /** 
-     * class to store research for a single university program 
-     * @param {JSON} data
+     * object to store research for an university program 
+     * @param {string} data raw json research data
      */
     constructor(data) {
         this.legacyIndex = data.legacyIndex;
@@ -34,7 +34,7 @@ export class Program {
 
     /** 
      * callback to convert raw json data into a Program class
-     * @param {JSON} data raw json data
+     * @param {string} data raw json data
      * @returns {Program} a new Program class from raw data
      */
     static fromJson(data) {
@@ -42,9 +42,9 @@ export class Program {
     }
 
     /** 
-     * function to convert organized json array into Program classes
-     * @param {JSON[]} programs array of raw json data
-     * @returns {Program[]} array of Program objects
+     * function to convert organized json array into array of Program objects
+     * @param {string[]} jsonArr array of raw json data
+     * @returns {Program[]} parsed array of Program objects
      */
     static fromJsonArray(programs) {
         return programs.map((programData) => Program.fromJson(programData));
