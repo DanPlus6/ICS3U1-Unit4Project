@@ -1,0 +1,38 @@
+:root {
+    --navy:      #0b1c3a;
+    --navy-deep: #07111f;
+    --navy-mid:  #162d52;
+    --gold:      #f6ae2d;
+    --gold-dark: #c88a1a;
+    --muted:     rgba(255,255,255,0.4);
+    --line:      rgba(255,255,255,0.07);
+    --font-disp: 'Bebas Neue', sans-serif;
+    --font-head: 'Montserrat', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: var(--font-body);
+    background: var(--navy-deep);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 24px;
+    overflow: hidden;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+    radial-gradient(ellipse 60% 50% at 50% 60%, rgba(246,174,45,0.07) 0%, transparent 70%),
+    radial-gradient(ellipse 80% 60% at 50% 100%, rgba(11,28,58,0.9) 0%, transparent 80%);
+    pointer-events: none;
+    z-index: 0;
+}
