@@ -126,13 +126,26 @@ button:active {
 }
 
 .program-form li {
+    min-height: 28px;
+    border-radius: 6px;
+    padding: 4px 6px;
     color: rgba(255,255,255,0.82);
     line-height: 1.5;
+    outline: none;
+}
+
+.program-form li[contenteditable="true"] {
+    cursor: text;
+}
+
+.program-form li[contenteditable="true"]:focus {
+    background: rgba(255,255,255,0.08);
+    box-shadow: 0 0 0 2px rgba(246,174,45,0.22);
 }
 
 .program-form li:empty::before {
     color: rgba(255,255,255,0.38);
-    content: "No entries added yet";
+    content: "Click to type";
 }
 
 #addFact,
