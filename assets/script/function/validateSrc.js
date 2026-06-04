@@ -12,7 +12,7 @@
  * `img` for image src check
  * @returns {bool} whether or not source is valid
  */
-export function validateSrc(src, mode="url") {
+export async function validateSrc(src, mode="url") {
     // if source is empty, invalidate immediately
     if (!src) {
         resolve(false);
