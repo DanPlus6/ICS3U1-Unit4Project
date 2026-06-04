@@ -31,11 +31,11 @@ function swapCoop(){
     if (hasCoop){
         hasCoop = false;
         nonCoop = true;
-        HAS_COOP.textContent = "Has Coop = No";
+        HAS_COOP.textContent = "Has Coop: No";
     }
     else {
         hasCoop = true;
         nonCoop = false;
-        HAS_COOP.textContent = "Has Coop = Yes";
+        HAS_COOP.textContent = "Has Coop: Yes";
     }
 }
