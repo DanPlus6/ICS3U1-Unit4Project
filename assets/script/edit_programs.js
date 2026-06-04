@@ -29,7 +29,7 @@ const INTERESTING_FACTS = document.getElementById('interestingFacts');
 const PRIMARY_SOURCES = document.getElementById('primarySources');
 const SECONDARY_SOURCES = document.getElementById('secondarySources');
 
-// boolean to determine if the user's program has coop or not
+/** boolean to determine if the user's program has coop or not */
 let hasCoop = true;
 
 function swapCoop(){
@@ -42,6 +42,9 @@ function swapCoop(){
         HAS_COOP.textContent = "Has Coop = Yes";
     }
 }
+
+/** flag to check if program's values are valid */
+let valid = true;
 
 function save(){
     let programs = getLocal();
