@@ -14,10 +14,7 @@
  */
 export async function validateSrc(src, mode="url") {
     // if source is empty, invalidate immediately
-    if (!src) {
-        resolve(false);
-        return;
-    }
+    if (!src) return false;
 
     if (mode === "url") { // check if validation mode is url structural check
         try { // attempt to construct url using provided source to structurally validate the source
