@@ -2,7 +2,7 @@
 
 import { Program } from '../class/Program.js';
 import { makeElem } from './makeElem.js';
-import { makeDetail } from './makeDetails.js';
+import { makeDetails } from './makeDetails.js';
 import { makeSourceList } from './makeSourceList.js';
 
 /** 
@@ -38,10 +38,10 @@ export function renderPrograms(ct, pgs, images=true) {
         const schoolName = makeElem({tag:'h2', htmlContent:program.schoolName});
         generalInfo.append(schoolName);
 
-        const p_city = makeDetail('City', program.city);
+        const p_city = makeDetails('City', program.city);
         generalInfo.append(p_city);
 
-        const p_province = makeDetail('Province', program.province);
+        const p_province = makeDetails('Province', program.province);
         generalInfo.append(p_province);
 
         programInfo.append(generalInfo);
@@ -63,17 +63,17 @@ export function renderPrograms(ct, pgs, images=true) {
         /** div to store program details */
         const programDetails = makeElem({tag:'div', className:'program-details'});
 
-        programDetails.append(makeDetail('Length of Program', program.lengthOfProgram));
-        programDetails.append(makeDetail('Program Description', program.programDescription));
-        programDetails.append(makeDetail('Co-op Available', (program.hasCoop ? 'Yes' : 'No')));
-        programDetails.append(makeDetail('Admission Courses Needed', program.admissionCoursesNeeded));
-        programDetails.append(makeDetail('Admission Average Needed', program.admissionAverageNeeded));
-        programDetails.append(makeDetail('Domestic Tuition', program.domesticTuition));
-        programDetails.append(makeDetail('International Tuition', program.internationalTuition));
-        programDetails.append(makeDetail('Academic Cost', program.academicCost));
-        programDetails.append(makeDetail('Academic Cost Details', program.academicCostDetails));
-        programDetails.append(makeDetail('Living Cost', program.livingCost));
-        programDetails.append(makeDetail('Living Cost Details', program.livingCostDetails));
+        programDetails.append(makeDetails('Length of Program', program.lengthOfProgram));
+        programDetails.append(makeDetails('Program Description', program.programDescription));
+        programDetails.append(makeDetails('Co-op Available', (program.hasCoop ? 'Yes' : 'No')));
+        programDetails.append(makeDetails('Admission Courses Needed', program.admissionCoursesNeeded));
+        programDetails.append(makeDetails('Admission Average Needed', program.admissionAverageNeeded));
+        programDetails.append(makeDetails('Domestic Tuition', program.domesticTuition));
+        programDetails.append(makeDetails('International Tuition', program.internationalTuition));
+        programDetails.append(makeDetails('Academic Cost', program.academicCost));
+        programDetails.append(makeDetails('Academic Cost Details', program.academicCostDetails));
+        programDetails.append(makeDetails('Living Cost', program.livingCost));
+        programDetails.append(makeDetails('Living Cost Details', program.livingCostDetails));
 
         const interestingFactsHeading = makeElem({tag:'h2', htmlContent:'Interesting Facts'});
         programDetails.append(interestingFactsHeading);

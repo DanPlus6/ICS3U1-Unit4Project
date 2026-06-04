@@ -8,7 +8,7 @@
  * 
  * By: David Fu
  */
-export function makeDetail(label, value) {
+export function makeDetails(label, value) {
     const p = makeElem({tag:'p', htmlContent:`${label}: `});
     const span = makeElem({tag:'span', htmlContent:value});
     p.append(span);
