@@ -97,7 +97,7 @@ let valid = true;
 function save() {
     verify();
     if (!valid){
-        alert('Invalid Input');
+        alert("Failed to save: Invalid input field(s)!");
         return;
     }
 
@@ -137,19 +137,34 @@ function verify() {
     valid = true;
 
     // check if domestic tuition is a numerical value
-    if (isNaN(DOMESTIC_TUITION.value)) valid = false; 
+    if (isNaN(DOMESTIC_TUITION.value)) {
+        console.log("Domestic tuition field should be a valid numerical value!");
+        valid = false; 
+    }
 
     // check if international tuition is a numerical value
-    if (isNaN(INTERNATIONAL_TUTION.value)) valid = false; 
+    if (isNaN(INTERNATIONAL_TUTION.value)) {
+        console.log("International tuition field should be a valid numerical value!");
+        valid = false; 
+    }
 
     // check if academic cost is a numerical value
-    if (isNaN(ACADEMIC_COST.value)) valid = false; 
+    if (isNaN(ACADEMIC_COST.value)) {
+        console.log("Academic cost field should be a valid numerical value!");
+        valid = false; 
+    }
 
     // check if living cost is a numerical value
-    if (isNaN(LIVING_COST.value)) valid = false;
+    if (isNaN(LIVING_COST.value)) {
+        console.log("Living cost field should be a valid numerical value!");
+        valid = false; 
+    }
     
     // check if program length is a numerical value
-    if (isNaN(PROGRAM_LENGTH.value)) valid = false;
+    if (isNaN(PROGRAM_LENGTH.value)) {
+        console.log("Program length field should be a valid numerical value!");
+        valid = false; 
+    }
 }
 
 /** callback to attach event listeners as this script is included as a module script */
