@@ -7,9 +7,10 @@
  * @param {string} [args.className] optional classname to assign to the element
  * @param {string} [args.id] optional id to assign to the element
  * @param {string} [args.htmlContent] optional innerHTML content to assign to element
+ * @param {string} [args.src] optional source to assign to element
  * @returns {HTMLElement} target to created html element
  */
-export function makeElem({tag, className, id, htmlContent}) {
+export function makeElem({tag, className, id, htmlContent, src}) {
     /** 
      * target to created html element
      * @type {HTMLElement}
@@ -22,6 +23,8 @@ export function makeElem({tag, className, id, htmlContent}) {
     if (id) elem.id = id;
     // check if innerHTML content was specified to assign it
     if (htmlContent) elem.innerHTML = htmlContent;
+    // check if src content was specified to assign it
+    if (src) elem.src = src;
 
 
     return elem;
