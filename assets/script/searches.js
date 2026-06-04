@@ -89,7 +89,7 @@ function domTuitionSearch(){
     //contains the lower bound the user imposed
     let lowerBound = TT_LOWER_BOUND.value;
     //check if the upper bound and lower bound inputs are numbers
-    if (!NaN(upperBound) && !NaN(lowerBound)){
+    if (!isNaN(upperBound) && !isNaN(lowerBound)){
         resArray = rangeSearch(domesticTuition, lowerBound, upperBound);
         //check if the elements inside hte domestic tuition are inside the bounds
         if (resArray != -1){
@@ -116,7 +116,7 @@ function intTuitionSearch(){
     //contains the lower bound the user imposed
     let lowerBound = TT_LOWER_BOUND.value;
     //check if the upper bound and lower bound inputs are numbers
-    if (!NaN(upperBound) && !NaN(lowerBound)){
+    if (!isNaN(upperBound) && !isNaN(lowerBound)){
         //contains the indexes of elements within the bounds
         let resArray = rangeSearch(internationalTuition, lowerBound, upperBound);
         //check if the elements inside the domestic tuition are inside the bounds
@@ -201,8 +201,8 @@ function showAllSearches(){
         }
         //check if the user did not input anything into length search
         else if (lengthSearch == ''){
-            //check if both the upper and lower bound has inputs and are numbers
-            if (lowerBound != '' && upperBound != '' && !NaN(lowerBound) && !NaN(upperBound)){
+            //check if both the upper and lower bound has inputs
+            if (lowerBound != '' && upperBound != ''){
                 //check if the user chose domestic tuition
                 if (domesticChose){
                     //contains the starting search
@@ -215,8 +215,8 @@ function showAllSearches(){
             }
         }
         else {
-            //check if the inputed into both the upper bound and lower bound and they are numbers
-            if (lowerBound != '' && upperBound != '' && !NaN(lowerBound) && !NaN(upperBound)){
+            //check if the inputed into both the upper bound and lower bound
+            if (lowerBound != '' && upperBound != ''){
                 //check if the user chose domestic search
                 if (domesticChose){
                     //contains the starting search
@@ -308,8 +308,8 @@ function showAllSearches(){
         }
         //check if the user has no input in program length
         else if (lengthSearch == ''){
-            //check if the user has inputs in both the upper and lower bound along with them being numbers
-            if (lowerBound != '' && upperBound != '' && !NaN(lowerBound) && !NaN(upperBound)){
+            //check if the user has inputs in both the upper and lower bound
+            if (lowerBound != '' && upperBound != ''){
                 //check if the user has domesitic tuition chosen
                 if (domesticChose){
                     //contains the first filter
@@ -371,7 +371,7 @@ function showAllSearches(){
         }
         else {
             //check if the user has inputs in both the upper and lower bound and they are both numbers
-            if (lowerBound != '' && upperBound != '' && !NaN(lowerBound) && !NaN(upperBound)){
+            if (lowerBound != '' && upperBound != ''){
                 //check if the user has domestic tution selected
                 if (domesticChose){
                     //contains the first filter
