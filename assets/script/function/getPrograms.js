@@ -7,12 +7,13 @@ import { getLocal } from "./getLocal.js";
 
 const PATH = '/assets/data/programs.json';
 
-
 let programs = null;
 
 /** 
  * Gets all the programs research data as an array of 'Program' objects
  * @returns {programs[]} array containing all the program research data
+ * 
+ * By: David Fu
  */
 export async function getPrograms() {
     if (programs) return programs;

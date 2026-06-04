@@ -5,6 +5,8 @@
  * @param {string} label field label
  * @param {string} value field value
  * @returns {HTMLParagraphElement} paragraph containing the label and value
+ * 
+ * By: David Fu
  */
 export function makeDetail(label, value) {
     const p = makeElem({tag:'p', htmlContent:`${label}: `});

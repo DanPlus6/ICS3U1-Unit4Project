@@ -4,6 +4,8 @@
  * fetch json data from a json file
  * @param {string} path path to json file
  * @returns {string} json data from file
+ * 
+ * By: David Fu
  */
 export async function loadJSON(path) {
     try {
