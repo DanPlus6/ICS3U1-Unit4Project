@@ -34,9 +34,11 @@ export async function validateSrc(src, mode="url") {
         return new Promise((resolve) => {
             /** img object to construct for validation */
             const img = new Image();
+
             // resolve promise based on whether image loads successfully or path is broken/missing/blocked
             img.onload = () => resolve(true);
-            img.onerror = () => resolve(true);
+            img.onerror = () => resolve(false);
+            
             img.src = src;
         });
     } else {
