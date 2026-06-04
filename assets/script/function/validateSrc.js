@@ -19,6 +19,7 @@ export async function validateSrc(src, mode="url") {
     if (mode === "url") { // check if validation mode is url structural check
         try { // attempt to construct url using provided source to structurally validate the source
             const url = new URL(src);
+            return true;
         } catch { return false; } // if attempting to construct the URL fails, source is structurally invalid
     } else if (mode === "live") { // check if validation mode is network check
         try { // attempt to issue HEAD request via fetch api to check if source is reachable
