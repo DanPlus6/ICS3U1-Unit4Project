@@ -19,6 +19,6 @@ export function sortArray(arr) {
         }
 
         // swap minimum element and current element
-        [arr[minidx],arr[i]] = [arr[i],arr[minIdx]];
+        [arr[minIdx],arr[i]] = [arr[i],arr[minIdx]];
     }
 }
