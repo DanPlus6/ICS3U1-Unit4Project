@@ -30,7 +30,7 @@
             <input type = "text" id = "programName" placeholder="Name of Program">
             <input type = "number" id = "lengthOfProgram" placeholder="Length of Program">
             <input type = "text" id = "programDescription" placeholder="Description of Program">
-            <button id = "hasCoop" onclick = "swapCoop();">Has Coop: Yes</button>
+            <button type = "button" id = "hasCoop">Has Coop: Yes</button>
             <input type = "text" id = "admissionCoursesNeeded" placeholder="Courses needed for Admission">
             <input type = "number" id = "admissionAverageNeeded" placeholder="Averages needed for Admission">
 
@@ -46,20 +46,20 @@
             <ul id = "interestingFacts">
                 <li class = "Fact"></li>
             </ul>
-            <button id = "addFact">Add Facts</button>
+            <button type="button" id="btn-addfact">Add Facts</button>
             <ul id = "primarySources">
                 <li class = "priSource"></li>
             </ul>
-            <button id = "addPriScource">Add Primary Sources</button>
+            <button type="button" id="btn-addprimsource">Add Primary Sources</button>
             <ul id = "secondarySources">
                 <li class = "secSource"></li>
             </ul>
-            <button id = "addSecSource">Add Secondary Sources</button>
+            <button type="button" id="btn-addsecsource">Add Secondary Sources</button>
         </section>
 
         <section class="form-actions">
-            <button id="btn-verify">Verify</button>
-            <button id="btn-save">Save</button>
+            <button type="button" id="btn-verify">Verify</button>
+            <button type="button" id="btn-save">Save</button>
         </section>
     </main>
     <script type="module" src="assets/script/edit_programs.js"></script>

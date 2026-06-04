@@ -28,6 +28,9 @@ const LIVING_COST = document.getElementById('livingCost');
 const INTERESTING_FACTS = document.getElementById('interestingFacts');
 const PRIMARY_SOURCES = document.getElementById('primarySources');
 const SECONDARY_SOURCES = document.getElementById('secondarySources');
+const BTN_ADD_FACT = document.getElementById('btn-addfact');
+const BTN_ADD_PRIMARY_SOURCE = document.getElementById('btn-addprimsource');
+const BTN_ADD_SECONDARY_SOURCE = document.getElementById('btn-addsecsource');
 const BTN_VERIFY = document.getElementById('btn-verify');
 const BTN_SAVE = document.getElementById('btn-save');
 
@@ -86,6 +89,10 @@ function verify() {
 
 /** callback to attach event listeners as this script is included as a module script */
 function attachListeners() {
+    HAS_COOP.addEventListener("click",swapCoop);
+    BTN_ADD_FACT.addEventListener("click", () => addEditableListItem(INTERESTING_FACTS, 'Fact'));
+    BTN_ADD_PRIMARY_SOURCE.addEventListener("click", () => addEditableListItem(PRIMARY_SOURCES, 'priSource'));
+    BTN_ADD_SECONDARY_SOURCE.addEventListener("click", () => addEditableListItem(SECONDARY_SOURCES, 'secSource'));
     BTN_VERIFY.addEventListener("click",verify);
     BTN_SAVE.addEventListener("click",save);
 }
