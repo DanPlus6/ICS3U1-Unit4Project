@@ -5,6 +5,7 @@ import { addArrays } from "./function/addArrays.js";
 import { getLocal } from "./function/getLocal.js";
 import { sortArray } from "./function/sortArray.js";
 import { append } from "./function/append.js";
+import { getListHTML } from "./function/getListHTML.js";
 
 // get the HTML elements
 const SCHOOL_NAME = document.getElementById('schoolName');
