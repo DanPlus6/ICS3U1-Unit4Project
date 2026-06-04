@@ -53,10 +53,10 @@ function swapCoop() {
 }
 
 /**
- * Makes a list item editable by the user
- * @param {HTMLLIElement} item list item to make editable
+ * Makes a list item editable by the user and have spell checking
+ * @param {HTMLLIElement} item list item to modify
  */
-function setupEditableListItem(item) {
+function setupEditableField(item) {
     item.contentEditable = true;
     item.spellcheck = true;
 }
@@ -68,18 +68,26 @@ function setupEditableListItem(item) {
  */
 function addEditableListItem(list, className) {
     const item = makeElem({tag:'li', className:className});
-    setupEditableListItem(item);
+    setupEditableField(item);
     list.append(item);
     item.focus();
 }
 
 /**
- * Makes existing list items editable
+ * Callback to setup non-simple input fields
  */
-function setupEditableLists() {
-    for (const item of INTERESTING_FACTS.children) setupEditableListItem(item);
-    for (const item of PRIMARY_SOURCES.children) setupEditableListItem(item);
-    for (const item of SECONDARY_SOURCES.children) setupEditableListItem(item);
+function setupAllEditableFields() {
+    // setup all interesting facts list items input fields
+    for (const item of INTERESTING_FACTS.children) setupEditableField(item);
+    // setup all primary sources list items input fields
+    for (const item of PRIMARY_SOURCES.children) setupEditableField(item);
+    // setup all secondary sources list items input fields
+    for (const item of SECONDARY_SOURCES.children) setupEditableField(item);
+    
+    // setup other non-simple input fields
+    setupEditableField(PROGRAM_DESC);
+    setupEditableField(ACADEMIC_COST_DETAILS);
+    setupEditableField(LIVING_COST_DETAILS);
 }
 
 /** flag to check if program's values are valid */
@@ -156,8 +164,8 @@ function attachListeners() {
 
 /** async callback to run once page loads */
 function init() {
-    // makes the default list items editable
-    setupEditableLists();
+    // sets up all non-simple input fields
+    setupAllEditableFields();
 
     // attaches event listeners
     attachListeners();
