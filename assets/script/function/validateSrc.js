@@ -39,6 +39,6 @@ export async function validateSrc(src, mode="url") {
             img.src = src;
         });
     } else {
-        return TypeError;
+        throw new TypeError("Invalid validation mode");
     }
 }
