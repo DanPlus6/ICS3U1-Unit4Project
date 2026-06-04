@@ -1,5 +1,7 @@
 'use strict';
 
+import { makeElem } from "./makeElem.js";
+
 /**
  * Creates a labelled paragraph for one field of program information
  * @param {string} label field label
