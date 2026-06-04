@@ -111,7 +111,7 @@ async function init() {
     programs = await getPrograms();
 
     // set starting index for display and traversal
-    if (Number.isNaN(idx)) idx = Math.floor(programs.length/2);
+    if (Number.isNaN(idx) || idx < 0 || idx >= programs.length) idx = Math.floor(programs.length/2);
     idx = Math.max(0, Math.min(idx, programs.length-1));
 
     // load the university program's data onto the site
