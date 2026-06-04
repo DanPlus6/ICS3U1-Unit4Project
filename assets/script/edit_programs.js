@@ -28,6 +28,8 @@ const LIVING_COST = document.getElementById('livingCost');
 const INTERESTING_FACTS = document.getElementById('interestingFacts');
 const PRIMARY_SOURCES = document.getElementById('primarySources');
 const SECONDARY_SOURCES = document.getElementById('secondarySources');
+const BTN_VERIFY = document.getElementById('btn-verify');
+const BTN_SAVE = document.getElementById('btn-save');
 
 /** boolean to determine if the user's program has coop or not */
 let hasCoop = true;
@@ -56,6 +58,7 @@ function save(){
     verify();
     if (!valid){
         alert('Invalid Input');
+        console.log('u suck giga');
         return;
     }
     let programs = getLocal();
@@ -63,6 +66,7 @@ function save(){
     let newProgram = new Program(SCHOOL_NAME.value, CITY.value, PROVINCE.value, COUNTRY.value, SCHOOL_PIC.value, MAP_PIC.value, PROGRAM_NAME.value, PROGRAM_LENGTH.value, PROGRAM_DESC.value, hasCoop, ADMISSION_COURSES.value, ADMISSION_AVERAGE.value, DOMESTIC_TUITION.value, INTERNATIONAL_TUTION.value,ACADEMIC_COST_DETAILS.value, ACADEMIC_COST.value, LIVING_COST_DETAILS.value, LIVING_COST.value, INTERESTING_FACTS.value, PRIMARY_SOURCES.value, SECONDARY_SOURCES.value);
     append(programs, newProgram);
     localStorage.setItem("program", JSON.stringify(programs));
+    console.log("successfully saved");
 }
 
 /**
@@ -73,3 +77,17 @@ function verify(){
     if (isNaN(DOMESTIC_TUITION.value)) valid = false; if (isNaN(INTERNATIONAL_TUTION.value)) valid = false; if (isNaN(ACADEMIC_COST.value)) valid = false; if (isNaN(LIVING_COST.value)) valid = false;
     if (isNaN(PROGRAM_LENGTH.value)) valid = false;
 }
+
+/** callback to attach event listeners as this script is included as a module script */
+function attachListeners() {
+    BTN_VERIFY.addEventListener("click",verify);
+    BTN_SAVE.addEventListener("click",save);
+}
+
+/** async callback to run once page loads */
+function init() {
+    // attaches event listeners
+    attachListeners();
+}
+
+document.addEventListener("DOMContentLoaded", init);
