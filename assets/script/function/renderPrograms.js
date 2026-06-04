@@ -13,7 +13,7 @@ import { makeSourceList } from './makeSourceList.js';
  * 
  * By: David Fu
  */
-export function renderUsers(ct, pgs, images=true) {
+export function renderPrograms(ct, pgs, images=true) {
     // clear old content
     ct.replaceChildren();
 
