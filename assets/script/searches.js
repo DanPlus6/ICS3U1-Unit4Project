@@ -6,7 +6,7 @@ import { rangeSearch } from './function/rangeSearch.js';
 import { removeDuplicates } from './function/removeDuplicates.js';
 import { searchString } from './function/searchString.js';
 import { searchAllMatches } from './function/searchAllMatches.js';
-import { sortArray } from ',/function/sortArray.js';
+import { sortArray } from './function/sortArray.js';
 import { Program } from './class/Program.js';
 import { pop } from './function/pop.js';
 import { countOccurrances } from './function/countOccurrances.js';
