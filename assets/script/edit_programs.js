@@ -41,11 +41,11 @@ let hasCoop = true;
  * Swaps the coop mode from having coop to not having coop and vice versa
  */
 function swapCoop() {
-    if (hasCoop){
+    // check current coop mode/status to swap it
+    if (hasCoop) {
         hasCoop = false;
-        HAS_COOP.textContent = "Has Coop = No";
-    }
-    else {
+        HAS_COOP.textContent = "Has Coop: No";
+    } else {
         hasCoop = true;
         HAS_COOP.textContent = "Has Coop = Yes";
     }
