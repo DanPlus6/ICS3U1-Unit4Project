@@ -1,5 +1,11 @@
 'use strict';
 
+import { Program } from "./class/Program.js";
+import { addArrays } from "./function/addArrays.js";
+import { getLocal } from "./function/getLocal.js";
+import { sortArray } from "./function/sortArray.js";
+import { append } from "./function/append.js";
+
 // get the HTML elements
 const SCHOOL_NAME = document.getElementById('schoolName');
 const CITY = document.getElementById('city');
@@ -25,17 +31,23 @@ const SECONDARY_SOURCES = document.getElementById('secondarySources');
 
 // boolean to determine if the user's program has coop or not
 let hasCoop = true;
-let nonCoop = false;
 
 function swapCoop(){
     if (hasCoop){
         hasCoop = false;
-        nonCoop = true;
-        HAS_COOP.textContent = "Has Coop: No";
+        HAS_COOP.textContent = "Has Coop = No";
     }
     else {
         hasCoop = true;
-        nonCoop = false;
-        HAS_COOP.textContent = "Has Coop: Yes";
+        HAS_COOP.textContent = "Has Coop = Yes";
     }
+}
+
+function save(){
+    let programs = getLocal();
+    sortArray(programs);
+    
+    let newProgram = new Program(SCHOOL_NAME.value, CITY.value, PROVINCE.value, COUNTRY.value, SCHOOL_PIC.value, MAP_PIC.value, PROGRAM_NAME.value, PROGRAM_LENGTH.value, PROGRAM_DESC.value, hasCoop, ADMISSION_COURSES.value, ADMISSION_AVERAGE.value, DOMESTIC_TUITION.value, INTERNATIONAL_TUTION.value,ACADEMIC_COST_DETAILS.value, ACADEMIC_COST.value, LIVING_COST_DETAILS.value, LIVING_COST.value, INTERESTING_FACTS.value, PRIMARY_SOURCES.value, SECONDARY_SOURCES.value);
+    append(programs, newProgram);
+    localStorage.setItem("program", JSON.stringify(programs));
 }
