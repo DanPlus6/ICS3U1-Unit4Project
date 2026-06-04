@@ -19,6 +19,22 @@ export function validateSrc(src, mode="url") {
         } catch (_) { // if attempting to construct the URL fails, source is structurally invalid
             return false;
         }
+    } else if (mode === "img") { // check if validation mode is image src check
+        // attempt to construct new image using source to validate it
+        return new Promise((resolve) => {
+            // if source is empty, invalidate immediately
+            if (!src) {
+                resolve(false);
+                return;
+            }
+
+            /** img object to construct for validation */
+            const img = new Image();
+            // resolve promise based on whether image loads successfully or path is broken/missing/blocked
+            img.onload = () => resolve(true);
+            img.onerror = () => resolve(true);
+            img.src = src;
+        });
     } else {
         return TypeError;
     }
