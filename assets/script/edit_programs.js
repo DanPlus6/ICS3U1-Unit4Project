@@ -6,6 +6,7 @@ import { sortArray } from "./function/sortArray.js";
 import { append } from "./function/append.js";
 import { makeElem } from "./function/makeElem.js";
 import { getListHTML } from "./function/getListHTML.js";
+import { validateSrc } from "./function/validateSrc.js";
 
 // get the HTML elements
 const SCHOOL_NAME = document.getElementById('schoolName');
@@ -163,6 +164,18 @@ function verify() {
     // check if program length is a numerical value
     if (isNaN(PROGRAM_LENGTH.value)) {
         console.log("Program length field should be a valid numerical value!");
+        valid = false; 
+    }
+
+    // validate school map image source
+    if (!validateSrc(MAP_PIC.value)) {
+        console.log("Map picture source is either invalid or unreachable!");
+        valid = false; 
+    }
+
+    // validate school image source
+    if (!validateSrc(SCHOOL_PIC.value)) {
+        console.log("Map picture source is either invalid or unreachable!");
         valid = false; 
     }
 }
