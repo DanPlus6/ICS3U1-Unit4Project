@@ -62,12 +62,36 @@ function save() {
         alert('Invalid Input');
         return;
     }
+
     let programs = getLocal();
     sortArray(programs);
-    let newProgram = new Program(SCHOOL_NAME.value, CITY.value, PROVINCE.value, COUNTRY.value, SCHOOL_PIC.value, MAP_PIC.value, PROGRAM_NAME.value, PROGRAM_LENGTH.value, PROGRAM_DESC.value, hasCoop, ADMISSION_COURSES.value, ADMISSION_AVERAGE.value, DOMESTIC_TUITION.value, INTERNATIONAL_TUTION.value,ACADEMIC_COST_DETAILS.value, ACADEMIC_COST.value, LIVING_COST_DETAILS.value, LIVING_COST.value, INTERESTING_FACTS.value, PRIMARY_SOURCES.value, SECONDARY_SOURCES.value);
+
+    let newProgram = new Program({
+        schoolName: SCHOOL_NAME.value,
+        city: CITY.value,
+        province: PROVINCE.value,
+        country: COUNTRY.value,
+        schoolPicture: SCHOOL_PIC.value,
+        mapPicture: MAP_PIC.value,
+        programName: PROGRAM_NAME.value,
+        lengthOfProgram: PROGRAM_LENGTH.value,
+        programDescription: PROGRAM_DESC.value,
+        hasCoop: hasCoop,
+        admissionCoursesNeeded: ADMISSION_COURSES.value,
+        admissionAverageNeeded: ADMISSION_AVERAGE.value,
+        domesticTuition: DOMESTIC_TUITION.value,
+        internationalTuition: INTERNATIONAL_TUTION.value,
+        academicCostDetails: ACADEMIC_COST_DETAILS.value,
+        academicCost: ACADEMIC_COST.value,
+        livingCostDetails: LIVING_COST_DETAILS.value,
+        livingCost: LIVING_COST.value,
+        interestingFacts: getListHTML(INTERESTING_FACTS),
+        primarySources: getListHTML(PRIMARY_SOURCES),
+        secondarySources: getListHTML(SECONDARY_SOURCES)
+    });
     append(programs, newProgram);
-    localStorage.setItem("program", JSON.stringify(programs));
-    console.log("successfully saved");
+
+    localStorage.setItem("programs", JSON.stringify(programs));
 }
 
 /** Check if the program is valid */
