@@ -32,6 +32,9 @@ const SECONDARY_SOURCES = document.getElementById('secondarySources');
 /** boolean to determine if the user's program has coop or not */
 let hasCoop = true;
 
+/**
+ * Swaps the coop mode from having coop to not having coop and vice versa
+ */
 function swapCoop(){
     if (hasCoop){
         hasCoop = false;
@@ -46,11 +49,27 @@ function swapCoop(){
 /** flag to check if program's values are valid */
 let valid = true;
 
+/**
+ * Saves programs into local storage
+ */
 function save(){
+    verify();
+    if (!valid){
+        alert('Invalid Input');
+        return;
+    }
     let programs = getLocal();
     sortArray(programs);
-    
     let newProgram = new Program(SCHOOL_NAME.value, CITY.value, PROVINCE.value, COUNTRY.value, SCHOOL_PIC.value, MAP_PIC.value, PROGRAM_NAME.value, PROGRAM_LENGTH.value, PROGRAM_DESC.value, hasCoop, ADMISSION_COURSES.value, ADMISSION_AVERAGE.value, DOMESTIC_TUITION.value, INTERNATIONAL_TUTION.value,ACADEMIC_COST_DETAILS.value, ACADEMIC_COST.value, LIVING_COST_DETAILS.value, LIVING_COST.value, INTERESTING_FACTS.value, PRIMARY_SOURCES.value, SECONDARY_SOURCES.value);
     append(programs, newProgram);
     localStorage.setItem("program", JSON.stringify(programs));
+}
+
+/**
+ * Check if the program is valid
+ */
+function verify(){
+    //check if numerical fields have valid value inside them
+    if (isNaN(DOMESTIC_TUITION.value)) valid = false; if (isNaN(INTERNATIONAL_TUTION.value)) valid = false; if (isNaN(ACADEMIC_COST.value)) valid = false; if (isNaN(LIVING_COST.value)) valid = false;
+    if (isNaN(PROGRAM_LENGTH.value)) valid = false;
 }
