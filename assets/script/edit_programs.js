@@ -71,6 +71,8 @@ function save() {
 
 /** Check if the program is valid */
 function verify() {
+    valid = true;
+
     // check if domestic tuition is a numerical value
     if (isNaN(DOMESTIC_TUITION.value)) valid = false; 
 
