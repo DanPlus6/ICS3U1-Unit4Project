@@ -1,12 +1,19 @@
 'use strict';
 
 /**
- * Creates html element optionally with a value
- * @param {HTMLElementType} type type of html element to create
- * @param {*} val value to assign the html element
+ * Function to create a html element
+ * @param {HTMLElementType} tag type of html tag/element to create
+ * @param {string} htmlContent optional innerHTML content to assign to element
  * @returns {HTMLElement} target to created html element
  */
-export function makeElem(type, val=null) {
-    if (val) return Object.assign(document.createElement(type), val);
-    else return document.createElement(type);
+export function makeElem(tag, htmlContent=null) {
+    /**
+     * target to HTML element to create
+     * @type {HTMLElement}
+     */
+    const elem = document.createElement(tag);
+    // if innerHTML content is specified, assign it
+    if (htmlContent) elem.innerHTML = htmlContent;
+
+    return elem;
 }
