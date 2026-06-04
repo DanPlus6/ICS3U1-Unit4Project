@@ -12,6 +12,11 @@ import { makeElem } from "./makeElem.js";
 export function makeSourceList(sources) {
     const sourceList = makeElem({tag:'ul'});
 
+    if (typeof sources === 'string') {
+        sourceList.innerHTML = sources;
+        return sourceList;
+    }
+
     for (const source of sources) {
         const sourceItem = makeElem({tag:'li'});
         const sourceLink = makeElem({tag:'a', href:source, htmlContent:source});
