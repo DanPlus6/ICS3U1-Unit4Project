@@ -95,9 +95,9 @@ function setupAllEditableFields() {
 let valid = true;
 
 /** Saves programs into local storage */
-function save() {
-    verify();
-    if (!valid){
+async function save() {
+    const isValid = await verify(false);
+    if (!isValid){
         alert("Failed to save: Invalid input field(s)!");
         return;
     }
@@ -133,51 +133,56 @@ function save() {
     localStorage.setItem("programs", JSON.stringify(programs));
 }
 
-/** Check if the program is valid */
-function verify() {
+/** 
+ * Check if the program is valid
+ * @returns {Promise<boolean>} whether the program is valid
+ */
+async function verify() {
     valid = true;
 
     // check if domestic tuition is a numerical value
     if (isNaN(DOMESTIC_TUITION.value)) {
-        console.log("Domestic tuition field should be a valid numerical value!");
+        alert("Domestic tuition field should be a valid numerical value!");
         valid = false; 
     }
 
     // check if international tuition is a numerical value
     if (isNaN(INTERNATIONAL_TUTION.value)) {
-        console.log("International tuition field should be a valid numerical value!");
+        alert("International tuition field should be a valid numerical value!");
         valid = false; 
     }
 
     // check if academic cost is a numerical value
     if (isNaN(ACADEMIC_COST.value)) {
-        console.log("Academic cost field should be a valid numerical value!");
+        alert("Academic cost field should be a valid numerical value!");
         valid = false; 
     }
 
     // check if living cost is a numerical value
     if (isNaN(LIVING_COST.value)) {
-        console.log("Living cost field should be a valid numerical value!");
+        alert("Living cost field should be a valid numerical value!");
         valid = false; 
     }
     
     // check if program length is a numerical value
     if (isNaN(PROGRAM_LENGTH.value)) {
-        console.log("Program length field should be a valid numerical value!");
+        alert("Program length field should be a valid numerical value!");
         valid = false; 
     }
 
     // validate school map image source
-    if (!validateSrc(MAP_PIC.value)) {
-        console.log("Map picture source is either invalid or unreachable!");
+    if (!(await validateSrc(MAP_PIC.value))) {
+        alert("Map picture source is either invalid or unreachable!");
         valid = false; 
     }
 
     // validate school image source
-    if (!validateSrc(SCHOOL_PIC.value)) {
-        console.log("Map picture source is either invalid or unreachable!");
+    if (!(await validateSrc(SCHOOL_PIC.value))) {
+        alert("School picture source is either invalid or unreachable!");
         valid = false; 
     }
+
+    return valid;
 }
 
 /** callback to attach event listeners as this script is included as a module script */
