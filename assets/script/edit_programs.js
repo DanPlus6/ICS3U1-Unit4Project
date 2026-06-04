@@ -37,7 +37,7 @@ let hasCoop = true;
 /**
  * Swaps the coop mode from having coop to not having coop and vice versa
  */
-function swapCoop(){
+function swapCoop() {
     if (hasCoop){
         hasCoop = false;
         HAS_COOP.textContent = "Has Coop = No";
@@ -51,14 +51,11 @@ function swapCoop(){
 /** flag to check if program's values are valid */
 let valid = true;
 
-/**
- * Saves programs into local storage
- */
-function save(){
+/** Saves programs into local storage */
+function save() {
     verify();
     if (!valid){
         alert('Invalid Input');
-        console.log('u suck giga');
         return;
     }
     let programs = getLocal();
@@ -69,12 +66,21 @@ function save(){
     console.log("successfully saved");
 }
 
-/**
- * Check if the program is valid
- */
-function verify(){
-    //check if numerical fields have valid value inside them
-    if (isNaN(DOMESTIC_TUITION.value)) valid = false; if (isNaN(INTERNATIONAL_TUTION.value)) valid = false; if (isNaN(ACADEMIC_COST.value)) valid = false; if (isNaN(LIVING_COST.value)) valid = false;
+/** Check if the program is valid */
+function verify() {
+    // check if domestic tuition is a numerical value
+    if (isNaN(DOMESTIC_TUITION.value)) valid = false; 
+
+    // check if international tuition is a numerical value
+    if (isNaN(INTERNATIONAL_TUTION.value)) valid = false; 
+
+    // check if academic cost is a numerical value
+    if (isNaN(ACADEMIC_COST.value)) valid = false; 
+
+    // check if living cost is a numerical value
+    if (isNaN(LIVING_COST.value)) valid = false;
+    
+    // check if program length is a numerical value
     if (isNaN(PROGRAM_LENGTH.value)) valid = false;
 }
 
