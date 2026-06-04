@@ -1,0 +1,173 @@
+body {
+    justify-content: flex-start;
+}
+
+.editor-page {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 12px 0;
+}
+
+.editor-header {
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 28px;
+    background: linear-gradient(135deg, rgba(22,45,82,0.92), rgba(7,17,31,0.92));
+    box-shadow: 0 22px 70px rgba(0,0,0,0.28);
+}
+
+.eyebrow {
+    margin-bottom: 8px;
+    color: var(--gold);
+    font-family: var(--font-head);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0;
+    text-transform: uppercase;
+}
+
+.editor-header h1 {
+    margin-bottom: 10px;
+    font-family: var(--font-head);
+    font-size: 3.25rem;
+    line-height: 1;
+}
+
+.intro {
+    max-width: 680px;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.program-form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 24px;
+    background: rgba(11,28,58,0.74);
+    box-shadow: 0 18px 56px rgba(0,0,0,0.24);
+}
+
+.program-form h2 {
+    grid-column: 1 / -1;
+    margin-top: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--line);
+    color: white;
+    font-family: var(--font-head);
+    font-size: 1.05rem;
+}
+
+.program-form h2:first-child {
+    margin-top: 0;
+}
+
+input,
+button {
+    min-height: 44px;
+    border-radius: 8px;
+    font: inherit;
+}
+
+input {
+    width: 100%;
+    border: 1px solid rgba(255,255,255,0.12);
+    padding: 11px 13px;
+    background: rgba(255,255,255,0.08);
+    color: white;
+    outline: none;
+}
+
+input::placeholder {
+    color: rgba(255,255,255,0.46);
+}
+
+input:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(246,174,45,0.16);
+    background: rgba(255,255,255,0.11);
+}
+
+button {
+    border: 0;
+    padding: 11px 18px;
+    background: var(--gold);
+    color: var(--navy);
+    font-family: var(--font-head);
+    font-weight: 800;
+    cursor: pointer;
+    transition: background 0.18s, transform 0.12s;
+}
+
+button:hover {
+    background: var(--gold-dark);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+#hasCoop {
+    justify-self: start;
+}
+
+.program-form ul {
+    grid-column: 1 / -1;
+    display: grid;
+    gap: 8px;
+    min-height: 46px;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    padding: 12px 16px 12px 34px;
+    background: rgba(7,17,31,0.48);
+}
+
+.program-form li {
+    color: rgba(255,255,255,0.82);
+    line-height: 1.5;
+}
+
+.program-form li:empty::before {
+    color: rgba(255,255,255,0.38);
+    content: "No entries added yet";
+}
+
+#addFact,
+#addPriScource,
+#addSecSource {
+    justify-self: start;
+    background: transparent;
+    color: var(--gold);
+    border: 1px solid rgba(246,174,45,0.44);
+}
+
+#addFact:hover,
+#addPriScource:hover,
+#addSecSource:hover {
+    background: rgba(246,174,45,0.12);
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 18px;
+    background: rgba(7,17,31,0.84);
+}
+
+.form-actions button:first-child {
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255,255,255,0.22);
+}
+
+.form-actions button:first-child:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+    background: rgba(255,255,255,0.04);
+}
