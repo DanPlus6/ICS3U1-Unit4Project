@@ -14,12 +14,18 @@ import { makeSourceList } from './makeSourceList.js';
  * By: David Fu
  */
 export function renderPrograms(ct, pgs, images=true) {
+    // Fail softly and do not overwrite existing content if programs array is empty
+    if (!pgs) return;
+
     // clear old content
     ct.replaceChildren();
 
     const frag = document.createDocumentFragment();
     // iterate through provided programs and generate elemtns for each of them
     for (const program of pgs) {
+        // Fail softly and continue if current program is empty
+        if (!program) continue;
+
         /** div to contain all of program's information */
         const programInfo = makeElem({tag:'div', className:'program-info'});
 
