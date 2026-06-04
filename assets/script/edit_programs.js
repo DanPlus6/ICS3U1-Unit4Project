@@ -1,10 +1,10 @@
 'use strict';
 
 import { Program } from "./class/Program.js";
-import { addArrays } from "./function/addArrays.js";
 import { getLocal } from "./function/getLocal.js";
 import { sortArray } from "./function/sortArray.js";
 import { append } from "./function/append.js";
+import { makeElem } from "./function/makeElem.js";
 import { getListHTML } from "./function/getListHTML.js";
 
 // get the HTML elements
@@ -48,8 +48,38 @@ function swapCoop() {
         HAS_COOP.textContent = "Has Coop: No";
     } else {
         hasCoop = true;
-        HAS_COOP.textContent = "Has Coop = Yes";
+        HAS_COOP.textContent = "Has Coop: Yes";
     }
+}
+
+/**
+ * Makes a list item editable by the user
+ * @param {HTMLLIElement} item list item to make editable
+ */
+function setupEditableListItem(item) {
+    item.contentEditable = true;
+    item.spellcheck = true;
+}
+
+/**
+ * Creates and appends a new editable list item
+ * @param {HTMLUListElement} list list that receives the new item
+ * @param {string} className class to apply to the new item
+ */
+function addEditableListItem(list, className) {
+    const item = makeElem({tag:'li', className:className});
+    setupEditableListItem(item);
+    list.append(item);
+    item.focus();
+}
+
+/**
+ * Makes existing list items editable
+ */
+function setupEditableLists() {
+    for (const item of INTERESTING_FACTS.children) setupEditableListItem(item);
+    for (const item of PRIMARY_SOURCES.children) setupEditableListItem(item);
+    for (const item of SECONDARY_SOURCES.children) setupEditableListItem(item);
 }
 
 /** flag to check if program's values are valid */
@@ -126,6 +156,9 @@ function attachListeners() {
 
 /** async callback to run once page loads */
 function init() {
+    // makes the default list items editable
+    setupEditableLists();
+
     // attaches event listeners
     attachListeners();
 }
