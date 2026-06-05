@@ -11,13 +11,13 @@
 </head>
 <body>
     <main class="editor-page">
-        <section class="editor-header">
+        <section class="page-header">
             <p class="eyebrow">Program Database</p>
             <h1>Add a University Program</h1>
             <p class="intro">Enter the school, program, cost, admission, and source details for a new database entry.</p>
         </section>
 
-        <section class="program-form">
+        <section class="program-form page-panel">
             <h2>School Details</h2>
             <input type = "text" id = "schoolName" placeholder="Name of School">
             <input type = "text" id = "city" placeholder="City of School">
@@ -46,19 +46,19 @@
             <ul id = "interestingFacts">
                 <li class = "Fact"></li>
             </ul>
-            <button type="button" id="btn-addfact">Add Facts</button>
+            <button type="button" class="ghost" id="btn-addfact">Add Facts</button>
             <ul id = "primarySources">
                 <li class = "priSource"></li>
             </ul>
-            <button type="button" id="btn-addprimsource">Add Primary Sources</button>
+            <button type="button" class="ghost" id="btn-addprimsource">Add Primary Sources</button>
             <ul id = "secondarySources">
                 <li class = "secSource"></li>
             </ul>
-            <button type="button" id="btn-addsecsource">Add Secondary Sources</button>
+            <button type="button" class="ghost" id="btn-addsecsource">Add Secondary Sources</button>
         </section>
 
         <section class="form-actions">
-            <button type="button" id="btn-verify">Verify</button>
+            <button type="button" class="secondary" id="btn-verify">Verify</button>
             <button type="button" id="btn-save">Save</button>
         </section>
     </main>
