@@ -19,7 +19,7 @@ export async function loadJSON(path) {
         // Stores the parsed JSON data from the response body
         const data = await response.json();
         return data;
-    } catch (error) { // Catch any fetch or JSON parsing errors so the page does not crash
-        console.error("Could not load JSON file:", error);
+    } catch (e) { // Catch any fetch or JSON parsing errors so the page does not crash
+        console.error("Could not load JSON file:", e);
     }
 }
