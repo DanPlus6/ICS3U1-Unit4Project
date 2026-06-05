@@ -32,6 +32,23 @@ export class Program {
         this.secondarySources = data.secondarySources || [];
     }
 
+    /**
+     * method to return all properties stored together as a string for searching purposes
+     * @returns {string} string cocantenation of all fields and properties of the program
+     */
+    getString() {
+        /** string to store concantenation of all fields and properties */
+        let resCocant = "";
+
+        // iterate through every property of this object
+        for (const v of Object.values(this)) {
+            // if property is a string, cocantenate it
+            if (typeof v === "string") resCocant += v;
+        }
+
+        return resCocant;
+    }
+
     /** 
      * callback to convert raw json data into a Program class
      * @param {string} data raw json data
