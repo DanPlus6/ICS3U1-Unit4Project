@@ -5,7 +5,7 @@ import { loadJSON } from "./loadJSON.js";
 import { addArrays } from "./addArrays.js";
 import { getLocal } from "./getLocal.js";
 
-const PATH = '/assets/data/programs.json';
+const PATH = '../../data/programs.json';
 
 let programs = null;
 
