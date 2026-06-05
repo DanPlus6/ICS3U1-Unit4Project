@@ -72,6 +72,7 @@ function setupEditableField(item) {
  * @param {string} className class to apply to the new item
  */
 function addEditableListItem(list, className) {
+    // Stores the new list item that the user can edit.
     const item = makeElem({tag:'li', className:className});
     setupEditableField(item);
     list.append(item);
@@ -100,15 +101,19 @@ let valid = true;
 
 /** Saves programs into local storage */
 async function save() {
+    // Stores whether all user inputs passed validation before saving.
     const isValid = await verify(false);
+    // Check if validation failed and stop saving if the input is invalid.
     if (!isValid){
         alert("Failed to save: Invalid input field(s)!");
         return;
     }
 
+    // Stores the current saved programs from local storage.
     let programs = getLocal();
     sortArray(programs);
 
+    // Stores the new program built from the editor form inputs.
     let newProgram = new Program({
         schoolName: SCHOOL_NAME.value,
         city: CITY.value,

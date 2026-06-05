@@ -51,9 +51,12 @@ let intTuition = false;
  * @returns {number} parsed number or fallback
  */
 function getNumberInput(input, fallback) {
+    // Check if the input is blank and use the fallback instead.
     if (input.value === "") return fallback;
 
+    // Stores the input value converted into a number.
     const parsed = Number(input.value);
+    // Check if the converted value is invalid and use the fallback instead.
     if (Number.isNaN(parsed)) return fallback;
 
     return parsed;
@@ -66,9 +69,12 @@ function getNumberInput(input, fallback) {
  * @returns {boolean} whether the program contains the search text
  */
 function matchesSearchText(program, searchText) {
+    // Check if there is no search text, which means every program matches the text search.
     if (searchText === "") return true;
 
+    // Stores all searchable program fields as one lowercase string.
     const searchableText = program.getString().toLowerCase();
+    // Stores all match positions found by the string search helper.
     const matches = searchString(searchableText, searchText);
     return matches.length > 0;
 }
@@ -82,11 +88,16 @@ function matchesSearchText(program, searchText) {
  * @returns {boolean} whether the program passes the filters
  */
 function matchesFilters(program, minTuition, maxTuition, length) {
+    // Stores the tuition value for the currently selected tuition mode.
     const tuition = Number(intTuition ? program.internationalTuition : program.domesticTuition);
+    // Stores the program length as a number for comparison.
     const programLength = Number(program.lengthOfProgram);
 
+    // Check if the program's co-op status does not match the selected filter.
     if (program.hasCoop !== hasCoop) return false;
+    // Check if the selected tuition is outside the user's range.
     if (tuition < minTuition || tuition > maxTuition) return false;
+    // Check if a program length filter is set and the program does not match it.
     if (length !== -1 && programLength !== length) return false;
 
     return true;
@@ -107,8 +118,10 @@ function showMessage(message) {
  * @returns {Program[]} programs from the pairs
  */
 function getProgramList(pairs) {
+    // Stores only the program objects from the program/index pairs.
     let programList = [];
 
+    // Loop through each pair so its program object can be copied into the render list.
     for (let i = 0; i < pairs.length; i++) {
         append(programList, pairs[i][0]);
     }
@@ -121,6 +134,7 @@ function getProgramList(pairs) {
  * @param {[Program, number][]} pairs program/index pairs represented by the rendered cards
  */
 function linkRenderedPrograms(pairs) {
+    // Loop through each rendered program card so it can link to the traversal page.
     for (let i = 0; i < P_OUTPUT.children.length; i++) {
         P_OUTPUT.children[i].style.cursor = "pointer";
         P_OUTPUT.children[i].title = "Open program details";
@@ -141,19 +155,26 @@ function renderSearchResults(pairs) {
 
 /** callback to execute the search */
 function execSearch() {
+    // Stores the user's normalized search text.
     const searchText = SRCH_IPT.value.toLowerCase().trim();
+    // Stores the minimum tuition filter, or no minimum if the input is blank.
     const minTuition = getNumberInput(T_MIN, Number.NEGATIVE_INFINITY);
+    // Stores the maximum tuition filter, or no maximum if the input is blank.
     const maxTuition = getNumberInput(T_MAX, Number.POSITIVE_INFINITY);
+    // Stores the program length filter, or -1 if no length filter is set.
     const programLength = getNumberInput(P_LEN, -1);
 
     searchRes = [];
 
+    // Loop through every program/index pair to find programs matching the current search.
     for (let i = 0; i < programs.length; i++) {
+        // Check if the current program matches both the search text and selected filters.
         if (matchesSearchText(programs[i][0], searchText) && matchesFilters(programs[i][0], minTuition, maxTuition, programLength)) {
             append(searchRes, programs[i]);
         }
     }
 
+    // Check if no programs matched so a helpful message can be shown.
     if (searchRes.length === 0) {
         showMessage("No programs match your search.");
         return;
@@ -164,6 +185,7 @@ function execSearch() {
 
 /** callback to swap tuition mode */
 function swapTuition() {
+    // Check the current tuition mode to swap it to the opposite option.
     if (intTuition) {
         intTuition = false;
         BTN_TT.innerHTML = "Domestic Tuition";
@@ -175,6 +197,7 @@ function swapTuition() {
 
 /** callback to swap */
 function toggleCoop() {
+    // Check the current co-op filter to swap it to the opposite option.
     if (hasCoop) {
         hasCoop = false;
         BTN_COOP.innerHTML = "Has Co-op: No";
@@ -187,8 +210,10 @@ function toggleCoop() {
 
 /** initialization callback  */
 async function init() {
+    // Stores all loaded programs before they are paired with traversal indexes.
     const loadedPrograms = await getPrograms();
 
+    // Loop through loaded programs to keep each program with its traversal index.
     for (let i = 0; i < loadedPrograms.length; i++) {
         append(programs, [loadedPrograms[i], i]);
     }
@@ -197,6 +222,7 @@ async function init() {
     BTN_COOP.addEventListener("click", toggleCoop);
     BTN_SRCH.addEventListener("click", execSearch);
     SRCH_IPT.addEventListener("keydown", (event) => {
+        // Check if the Enter key was pressed to run the search from the keyboard.
         if (event.key === "Enter") execSearch();
     });
 }
