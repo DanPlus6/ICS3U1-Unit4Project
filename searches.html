@@ -22,7 +22,7 @@
         <section class="search-panel page-panel">
             <div class="search-bar">
                 <input type="text" id="search-input" placeholder="Search for a program...">
-                <button type="button" class="search-button" onclick="execSearch()" aria-label="Search programs">
+                <button type="button" class="search-button" id="btn-search">
                     <img src="assets/img/search-button.png">
                 </button>
             </div>
@@ -31,11 +31,11 @@
                 <span class="filter-label">Filters:</span>
 
                 <div class="filter-control">
-                    <input type="checkbox" id="filter-coop" aria-label="Apply co-op filter">
+                    <input type="checkbox" id="filter-coop">
                     <details class="filter-menu">
                         <summary>Co-op</summary>
                         <div class="filter-menu-content">
-                            <button type="button" class="ghost" id="btn-toggle-coop" onclick="toggleCoop();">Has Co-op: Yes</button>
+                            <button type="button" class="ghost" id="btn-toggle-coop">Has Co-op: Yes</button>
                         </div>
                     </details>
                 </div>
@@ -47,13 +47,13 @@
                         <div class="filter-menu-content tuition-menu-content">
                             <input type="number" id="tuition-min" placeholder="Minimum Tuition">
                             <input type="number" id="tuition-max" placeholder="Maximum Tuition">
-                            <button type="button" class="secondary" onclick="swapTuitionMode();" id="btn-swap-tuition">Domestic Tuition</button>
+                            <button type="button" class="secondary" id="btn-swap-tuition">Domestic Tuition</button>
                         </div>
                     </details>
                 </div>
 
                 <div class="filter-control">
-                    <input type="checkbox" id="filter-length" aria-label="Apply program length filter">
+                    <input type="checkbox" id="filter-length">
                     <details class="filter-menu">
                         <summary>Program Length</summary>
                         <div class="filter-menu-content">
