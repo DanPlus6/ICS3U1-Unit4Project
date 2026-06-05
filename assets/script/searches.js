@@ -22,7 +22,7 @@ const BTN_TT = document.getElementById("btn-swap-tuition");
 const BTN_COOP = document.getElementById("btn-toggle-coop");
 const BTN_SRCH = document.getElementById("btn-search");
 const BTN_SORT = document.getElementById("btn-sort");
-const P_OUTPUT = document.getElementById("p-output");
+const DIV_RES = document.getElementById("div-results");
 
 /** 
  * array to store all searchable programs with their traversal indexes
@@ -116,8 +116,8 @@ function matchesFilters(program, minTuition, maxTuition, length) {
  * @param {string} message message to show
  */
 function showMessage(message) {
-    P_OUTPUT.replaceChildren();
-    P_OUTPUT.append(makeElem({tag:"p", htmlContent:message}));
+    DIV_RES.replaceChildren();
+    DIV_RES.append(makeElem({tag:"p", htmlContent:message}));
 }
 
 /**
@@ -143,10 +143,10 @@ function getProgramList(pairs) {
  */
 function linkRenderedPrograms(pairs) {
     // Loop through each rendered program card so it can link to the traversal page.
-    for (let i = 0; i < P_OUTPUT.children.length; i++) {
-        P_OUTPUT.children[i].style.cursor = "pointer";
-        P_OUTPUT.children[i].title = "Open program details";
-        P_OUTPUT.children[i].addEventListener("click", () => {
+    for (let i = 0; i < DIV_RES.children.length; i++) {
+        DIV_RES.children[i].style.cursor = "pointer";
+        DIV_RES.children[i].title = "Open program details";
+        DIV_RES.children[i].addEventListener("click", () => {
             window.location.href = `traversal.html?idx=${pairs[i][1]}`;
         });
     }
@@ -157,7 +157,7 @@ function linkRenderedPrograms(pairs) {
  * @param {[Program, number][]} pairs program/index pairs to render
  */
 function renderSearchResults(pairs) {
-    renderPrograms(P_OUTPUT, getProgramList(pairs), false);
+    renderPrograms(DIV_RES, getProgramList(pairs), false);
     linkRenderedPrograms(pairs);
 }
 
