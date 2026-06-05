@@ -46,10 +46,10 @@ let hasCoop = true;
 let intTuition = false;
 
 /**
- * current sort direction for program name sorting
- * `"asc"` = A --> Z, `"desc"` = Z --> A
- */
-let sortOrder = "asc";
+ * flag to track sorting type
+ * true = ascending, false = descending 
+*/
+let sortAscending = true;
 
 
 /**
@@ -161,6 +161,42 @@ function renderSearchResults(pairs) {
     linkRenderedPrograms(pairs);
 }
 
+/**
+ * Sorts search results by program name
+ * @param {[Program, number][]} pairs program/index pairs
+ */
+function sortResultsByName(pairs) {
+    // Loop through every position
+    for (let i = 0; i < pairs.length - 1; i++) {
+        // Loop through remaining positions
+        for (let j = i + 1; j < pairs.length; j++) {
+
+            // Store both names in lowercase for comparison
+            const nameA = pairs[i][0].programName.toLowerCase();
+            const nameB = pairs[j][0].programName.toLowerCase();
+
+            /** flag to track whether to swap the programs */
+            let shouldSwap = false;
+
+            // Check if sorting in ascending order
+            if (sortAscending) {
+                if (nameA > nameB) {
+                    shouldSwap = true;
+                }
+            }
+            // Check if sorting in descending order
+            else {
+                if (nameA < nameB) {
+                    shouldSwap = true;
+                }
+            }
+
+            // Swap entries when needed
+            if (shouldSwap) [pairs[i],pairs[j]] = [pairs[j],pairs[i]];
+        }
+    }
+}
+
 /** callback to execute the search */
 function execSearch() {
     // Stores the user's normalized search text.
@@ -188,7 +224,8 @@ function execSearch() {
         return;
     }
 
-    renderSearchResults(sortedByName(searchRes));
+    sortResultsByName(searchRes);
+    renderSearchResults(searchRes);
 }
 
 /** callback to swap tuition mode */
@@ -201,6 +238,8 @@ function swapTuition() {
         intTuition = true;
         BTN_TT.innerHTML = "International Tuition";
     }
+    
+    execSearch();
 }
 
 /** callback to swap */
@@ -213,57 +252,53 @@ function toggleCoop() {
         hasCoop = true;
         BTN_COOP.innerHTML = "Has Co-op: Yes";
     }
+    
+    execSearch();
 }
 
 /**
- * Returns a sorted copy of program/index pairs by program name
- * @param {[Program, number][]} pairs program/index pairs to sort
- * @returns {[Program, number][]} sorted copy
+ * callback to toggles name sort direction and refresh results
  */
-function sortedByName(pairs) {
-    return [...pairs].sort((a, b) => {
-        const nameA = String(a[0].name ?? "").toLowerCase();
-        const nameB = String(b[0].name ?? "").toLowerCase();
-        return sortOrder === "asc"
-            ? nameA.localeCompare(nameB)
-            : nameB.localeCompare(nameA);
-    });
-}
-
-/** callback to toggle sort direction and re-render any existing results */
 function toggleSort() {
-    // Swap the sort order to the opposite direction.
-    sortOrder = sortOrder === "asc" ? "desc" : "asc";
+    // Swap sort direction.
+    sortAscending = !sortAscending;
 
-    // Update the button's visible direction label and arrow orientation.
-    BTN_SORT.querySelector(".sort-dir").textContent = sortOrder === "asc" ? "A~Z" : "Z~A";
-    BTN_SORT.querySelector(".sort-icon").style.transform =
-        sortOrder === "asc" ? "" : "scaleY(-1)";
-    BTN_SORT.setAttribute("title",
-        sortOrder === "asc" ? "Sort results by program name" : "Sort results by program name (Z~A)");
+    // update button label
+    const dirLabel = BTN_SORT.querySelector(".sort-dir");
 
-    // Re-render existing results under the new sort order if any are shown.
-    if (searchRes.length > 0) renderSearchResults(sortedByName(searchRes));
+    if (sortAscending) { // check sorting type and swap it
+        dirLabel.textContent = "A~Z";
+    } else {
+        dirLabel.textContent = "Z~A";
+    }
+
+    // Re-run search so rendering updates immediately
+    execSearch();
 }
 
 
 /** initialization callback  */
 async function init() {
-    // Stores all loaded programs before they are paired with traversal indexes.
+    // Stores all loaded programs before they are paired with traversal indexes
     const loadedPrograms = await getPrograms();
 
-    // Loop through loaded programs to keep each program with its traversal index.
+    // Loop through loaded programs to keep each program with its traversal index
     for (let i = 0; i < loadedPrograms.length; i++) {
         append(programs, [loadedPrograms[i], i]);
     }
 
     BTN_TT.addEventListener("click", swapTuition);
     BTN_COOP.addEventListener("click", toggleCoop);
-    BTN_SORT.addEventListener("click", toggleSort);
     BTN_SRCH.addEventListener("click", execSearch);
+    BTN_SORT.addEventListener("click", toggleSort);
     SRCH_IPT.addEventListener("keydown", (event) => {
-        // Check if the Enter key was pressed to run the search from the keyboard.
+        // Check if the Enter key was pressed to run the search from the keyboard
         if (event.key === "Enter") execSearch();
     });
+
+    SRCH_IPT.addEventListener("input", execSearch);
+    T_MIN.addEventListener("input", execSearch);
+    T_MAX.addEventListener("input", execSearch);
+    P_LEN.addEventListener("input", execSearch);
 }
 document.addEventListener("DOMContentLoaded", init);
