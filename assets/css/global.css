@@ -225,7 +225,7 @@ li[contenteditable="true"]:empty::before {
     justify-content: center;
     align-items: center;
 
-    background-color: transparent;
+    background-color: var(--gold);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     
     transition: all 0.3s ease;
