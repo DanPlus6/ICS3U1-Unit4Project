@@ -5,6 +5,48 @@ import { makeElem } from './makeElem.js';
 import { makeDetails } from './makeDetails.js';
 import { makeSourceList } from './makeSourceList.js';
 
+/**
+ * Formats a number with a unit suffix
+ * @param {number|string} value value to format
+ * @param {string} unit unit to append
+ * @returns {string} formatted value
+ */
+function formatUnit(value, unit) {
+    if (value === "" || value == null) return "";
+
+    const numericValue = Number(value);
+    if (unit === "years" && numericValue === 1) return `${value} year`;
+
+    return `${value} ${unit}`;
+}
+
+/**
+ * Formats a number as a dollar amount
+ * @param {number|string} value value to format
+ * @returns {string} formatted currency
+ */
+function formatMoney(value) {
+    if (value === "" || value == null) return "";
+    if (typeof value === "string" && value[0] === "$") return value;
+
+    const numericValue = Number(value);
+    if (Number.isNaN(numericValue)) return `$${value}`;
+
+    return `$${numericValue.toLocaleString()}`;
+}
+
+/**
+ * Formats a number as a percent
+ * @param {number|string} value value to format
+ * @returns {string} formatted percent
+ */
+function formatPercent(value) {
+    if (value === "" || value == null) return "";
+    if (typeof value === "string" && value[value.length-1] === "%") return value;
+
+    return `${value}%`;
+}
+
 /** 
  * dynamically generates elements to render programs' data
  * @param {HTMLElement} ct container to generate elemnts in
@@ -63,16 +105,16 @@ export function renderPrograms(ct, pgs, images=true) {
         /** div to store program details */
         const programDetails = makeElem({tag:'div', className:'program-details'});
 
-        programDetails.append(makeDetails('Length of Program', program.lengthOfProgram));
+        programDetails.append(makeDetails('Length of Program', formatUnit(program.lengthOfProgram, 'years')));
         programDetails.append(makeDetails('Program Description', program.programDescription));
         programDetails.append(makeDetails('Co-op Available', (program.hasCoop ? 'Yes' : 'No')));
         programDetails.append(makeDetails('Admission Courses Needed', program.admissionCoursesNeeded));
-        programDetails.append(makeDetails('Admission Average Needed', program.admissionAverageNeeded));
-        programDetails.append(makeDetails('Domestic Tuition', program.domesticTuition));
-        programDetails.append(makeDetails('International Tuition', program.internationalTuition));
-        programDetails.append(makeDetails('Academic Cost', program.academicCost));
+        programDetails.append(makeDetails('Admission Average Needed', formatPercent(program.admissionAverageNeeded)));
+        programDetails.append(makeDetails('Domestic Tuition', formatMoney(program.domesticTuition)));
+        programDetails.append(makeDetails('International Tuition', formatMoney(program.internationalTuition)));
+        programDetails.append(makeDetails('Academic Cost', formatMoney(program.academicCost)));
         programDetails.append(makeDetails('Academic Cost Details', program.academicCostDetails));
-        programDetails.append(makeDetails('Living Cost', program.livingCost));
+        programDetails.append(makeDetails('Living Cost', formatMoney(program.livingCost)));
         programDetails.append(makeDetails('Living Cost Details', program.livingCostDetails));
 
         const interestingFactsHeading = makeElem({tag:'h2', htmlContent:'Interesting Facts'});
