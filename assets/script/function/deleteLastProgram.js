@@ -1,7 +1,7 @@
 'use strict';
 
 // Import essential functions from function toolbox
-import { getLocal } from "./getLocal";
+import { getLocal } from "./getLocal.js";
 
 /**
  * Deletes the last saved program from local storage after confirmation
