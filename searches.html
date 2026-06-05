@@ -27,21 +27,36 @@
                 </button>
             </div>
 
-            <div class="search-tabs" aria-label="Search modes">
-                <button type="button" class="ghost" onclick="showPartialSearch();">Partial Search</button>
-                <button type="button" class="ghost" onclick="showCoop();">Has Co-op: Yes</button>
-                <button type="button" class="ghost" onclick="showLength();">Length of Program</button>
-            </div>
+            <div class="filter-menus" aria-label="Search filters">
+                <span class="filter-label">Filters:</span>
 
-            <div class="filter-grid">
-                <div class="filter-group">
-                    <input type="number" id="tt-lower-bound" placeholder="Lowerbound of Tuition">
-                    <input type="number" id="tt-upper-bound" placeholder="Upperbound of Tuition">
-                    <button type="button" class="secondary" onclick="swapTuitionMode();" id="btn-swap-tuition">Domestic Tuition</button>
+                <div class="filter-control">
+                    <details class="filter-menu">
+                        <summary><input type="checkbox" id="filter-coop" aria-label="Apply co-op filter">Co-op</summary>
+                        <div class="filter-menu-content">
+                            <button type="button" class="ghost" onclick="toggleCoop();">Has Co-op: Yes</button>
+                        </div>
+                    </details>
                 </div>
 
-                <div class="filter-group">
-                    <input type="number" id="program-length" placeholder="Length of Program">
+                <div class="filter-control">
+                    <details class="filter-menu">
+                        <summary><input type="checkbox" id="filter-tuition" aria-label="Apply tuition filter">Tuition</summary>
+                        <div class="filter-menu-content tuition-menu-content">
+                            <input type="number" id="tt-lower-bound" placeholder="Minimum Tuition">
+                            <input type="number" id="tt-upper-bound" placeholder="Maximum Tuition">
+                            <button type="button" class="secondary" onclick="swapTuitionMode();" id="btn-swap-tuition">Domestic Tuition</button>
+                        </div>
+                    </details>
+                </div>
+
+                <div class="filter-control">
+                    <details class="filter-menu">
+                        <summary><input type="checkbox" id="filter-length" aria-label="Apply program length filter">Program Length</summary>
+                        <div class="filter-menu-content">
+                            <input type="number" id="program-length" placeholder="Length of Program">
+                        </div>
+                    </details>
                 </div>
             </div>
         </section>
