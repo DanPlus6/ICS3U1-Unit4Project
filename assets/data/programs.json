@@ -1,7 +1,5 @@
 [
     {
-        "legacyIndex": 0,
-        "legacyFile": "ashleyData.js",
         "schoolName": "Western",
         "city": "London",
         "province": "Ontario",
@@ -32,8 +30,6 @@
         ]
     },
     {
-        "legacyIndex": 1,
-        "legacyFile": "radinData.js",
         "schoolName": "McMaster University",
         "city": "Hamilton",
         "province": "Ontario",
@@ -64,8 +60,6 @@
         ]
     },
     {
-        "legacyIndex": 2,
-        "legacyFile": "audreyData.js",
         "schoolName": "McMaster University",
         "city": "Hamilton",
         "province": "Ontario",
@@ -96,8 +90,6 @@
         ]
     },
     {
-        "legacyIndex": 3,
-        "legacyFile": "kameronData.js",
         "schoolName": "Toronto Metropolitian University",
         "city": "Toronto",
         "province": "Ontario",
@@ -128,8 +120,6 @@
         ]
     },
     {
-        "legacyIndex": 4,
-        "legacyFile": "haobinData.js",
         "schoolName": "University of Waterloo",
         "city": "Waterloo",
         "province": "Ontario",
@@ -160,8 +150,6 @@
         ]
     },
     {
-        "legacyIndex": 5,
-        "legacyFile": "michelleData.js",
         "schoolName": "Waterloo University & Wilfrid Laurier University",
         "city": "Waterloo",
         "province": "Ontario",
@@ -192,8 +180,6 @@
         ]
     },
     {
-        "legacyIndex": 6,
-        "legacyFile": "loganData.js",
         "schoolName": "The University of Hong Kong",
         "city": "Pok Fu Lam",
         "province": "Hong Kong Island",
@@ -223,8 +209,6 @@
         ]
     },
     {
-        "legacyIndex": 7,
-        "legacyFile": "ianData.js",
         "schoolName": "The University of Hong Kong: Department of Data and Systems Engineering",
         "city": "Pok Fu Lam",
         "province": "Hong Kong",
@@ -255,8 +239,6 @@
         ]
     },
     {
-        "legacyIndex": 8,
-        "legacyFile": "davidData.js",
         "schoolName": "University of Waterloo",
         "city": "Waterloo",
         "province": "Ontario",
@@ -287,8 +269,6 @@
         ]
     },
     {
-        "legacyIndex": 9,
-        "legacyFile": "paulData.js",
         "schoolName": "York University",
         "city": "Toronto",
         "province": "Ontario",
@@ -318,8 +298,6 @@
         ]
     },
     {
-        "legacyIndex": 10,
-        "legacyFile": "marcusKData.js",
         "schoolName": "University of Toronto (St. George Campus)",
         "city": "Toronto",
         "province": "Ontario",
@@ -350,8 +328,6 @@
         ]
     },
     {
-        "legacyIndex": 11,
-        "legacyFile": "edwinData.js",
         "schoolName": "University of British Columbia",
         "city": "Kelowna",
         "province": "British Columbia",
@@ -382,8 +358,6 @@
         ]
     },
     {
-        "legacyIndex": 12,
-        "legacyFile": "marcusNData.js",
         "schoolName": "University of Toronto Scarborough",
         "city": "Scarborough",
         "province": "Ontario",
@@ -414,8 +388,6 @@
         ]
     },
     {
-        "legacyIndex": 13,
-        "legacyFile": "victoriaData.js",
         "schoolName": "McMaster University",
         "city": "Hamilton",
         "province": "Ontario",
@@ -445,8 +417,6 @@
         ]
     },
     {
-        "legacyIndex": 14,
-        "legacyFile": "brandonData.js",
         "schoolName": "York University(Markham campus)",
         "city": "Markham",
         "province": "Ontario",
@@ -477,8 +447,6 @@
         ]
     },
     {
-        "legacyIndex": 15,
-        "legacyFile": "danielData.js",
         "schoolName": "University of Ottawa",
         "city": "Ottawa",
         "province": "Ontario",
@@ -509,8 +477,6 @@
         ]
     },
     {
-        "legacyIndex": 16,
-        "legacyFile": "shawnData.js",
         "schoolName": "University of Toronto Mississauga",
         "city": "Mississauga",
         "province": "Ontario",
@@ -541,8 +507,6 @@
         ]
     },
     {
-        "legacyIndex": 17,
-        "legacyFile": "ceciliaData.js",
         "schoolName": "Ontario Tech University",
         "city": "Oshawa",
         "province": "Ontario",
@@ -573,8 +537,6 @@
         ]
     },
     {
-        "legacyIndex": 18,
-        "legacyFile": "lucasData.js",
         "schoolName": "University of British Columbia",
         "city": "Vancouver",
         "province": "British Columbia",

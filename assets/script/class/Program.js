@@ -6,9 +6,6 @@ export class Program {
      * @param {string} data raw json research data
      */
     constructor(data) {
-        this.legacyIndex = data.legacyIndex;
-        this.legacyFile = data.legacyFile;
-
         this.schoolName = data.schoolName;
         this.city = data.city;
         this.province = data.province;
