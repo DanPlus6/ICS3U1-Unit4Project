@@ -1,3 +1,7 @@
+/**
+ * By David Fu
+ */
+
 'use strict';
 
 import { Program } from "./class/Program.js";
