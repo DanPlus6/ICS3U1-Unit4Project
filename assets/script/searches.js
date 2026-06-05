@@ -21,6 +21,7 @@ const P_LEN = document.getElementById("program-length");
 const BTN_TT = document.getElementById("btn-swap-tuition");
 const BTN_COOP = document.getElementById("btn-toggle-coop");
 const BTN_SRCH = document.getElementById("btn-search");
+const BTN_SORT = document.getElementById("btn-sort");
 const P_OUTPUT = document.getElementById("p-output");
 
 /** 
@@ -43,6 +44,12 @@ let hasCoop = true;
  * `true` = international, `false` = domestic
  */
 let intTuition = false;
+
+/**
+ * current sort direction for program name sorting
+ * `"asc"` = A --> Z, `"desc"` = Z --> A
+ */
+let sortOrder = "asc";
 
 
 /**
@@ -181,7 +188,7 @@ function execSearch() {
         return;
     }
 
-    renderSearchResults(searchRes);
+    renderSearchResults(sortedByName(searchRes));
 }
 
 /** callback to swap tuition mode */
@@ -208,6 +215,37 @@ function toggleCoop() {
     }
 }
 
+/**
+ * Returns a sorted copy of program/index pairs by program name
+ * @param {[Program, number][]} pairs program/index pairs to sort
+ * @returns {[Program, number][]} sorted copy
+ */
+function sortedByName(pairs) {
+    return [...pairs].sort((a, b) => {
+        const nameA = String(a[0].name ?? "").toLowerCase();
+        const nameB = String(b[0].name ?? "").toLowerCase();
+        return sortOrder === "asc"
+            ? nameA.localeCompare(nameB)
+            : nameB.localeCompare(nameA);
+    });
+}
+
+/** callback to toggle sort direction and re-render any existing results */
+function toggleSort() {
+    // Swap the sort order to the opposite direction.
+    sortOrder = sortOrder === "asc" ? "desc" : "asc";
+
+    // Update the button's visible direction label and arrow orientation.
+    BTN_SORT.querySelector(".sort-dir").textContent = sortOrder === "asc" ? "A~Z" : "Z~A";
+    BTN_SORT.querySelector(".sort-icon").style.transform =
+        sortOrder === "asc" ? "" : "scaleY(-1)";
+    BTN_SORT.setAttribute("title",
+        sortOrder === "asc" ? "Sort results by program name" : "Sort results by program name (Z~A)");
+
+    // Re-render existing results under the new sort order if any are shown.
+    if (searchRes.length > 0) renderSearchResults(sortedByName(searchRes));
+}
+
 
 /** initialization callback  */
 async function init() {
@@ -221,6 +259,7 @@ async function init() {
 
     BTN_TT.addEventListener("click", swapTuition);
     BTN_COOP.addEventListener("click", toggleCoop);
+    BTN_SORT.addEventListener("click", toggleSort);
     BTN_SRCH.addEventListener("click", execSearch);
     SRCH_IPT.addEventListener("keydown", (event) => {
         // Check if the Enter key was pressed to run the search from the keyboard.

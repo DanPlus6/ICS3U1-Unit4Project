@@ -137,6 +137,50 @@ body {
     left: auto;
 }
 
+/* Sort button */
+.sort-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-left: auto;
+    padding: 11px 18px;
+    min-height: 44px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 999px;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.72);
+    font-family: var(--font-head);
+    font-weight: 800;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: border-color 0.18s, color 0.18s, background 0.18s;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.sort-btn:hover {
+    border-color: rgba(255, 255, 255, 0.38);
+    color: white;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.sort-btn:active {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.sort-icon {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    transition: transform 0.22s ease;
+}
+
+.sort-dir {
+    opacity: 0.6;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
 /* Search results */
 .results-section {
     display: flex;
