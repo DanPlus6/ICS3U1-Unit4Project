@@ -37,6 +37,7 @@ export function searchString(txt, pat) {
     }
 
     // Search
+    /** array to store indexes where matches are found */
     const res = [];
 
     /** primary iterator for traversing the text */
