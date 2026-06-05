@@ -44,23 +44,17 @@ function updateData(program) {
 }
 
 /**
- * Increases the current index by 1 to show the next school
+ * Traverse to program on the right
  */
 function next() {
-    // check if the current index is equal to or lower than the highest bound
-    if (idx < programs.length - 1) {
-        updateData(programs[++idx]);
-    }
+    updateData(programs[ (++idx % programs.length ) ]);
 }
 
 /**
- * Decreases the current index by 1 to show the previous school
+ * traverse to program on the left
  */
 function prev() {
-    // check if the current index is equal to or higher than the lowest bound
-    if (idx > 0) {
-        updateData(programs[--idx]);
-    }
+    updateData(programs[ ((--idx%programs.length) + programs.length) % programs.length ]);
 }
 
 /** callback to attach event listeners as this script is included as a module script */
