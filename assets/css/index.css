@@ -25,3 +25,11 @@ a:hover{
 h2:hover{
     background-color: #c88a1a80;
 }
+
+section {
+    margin: 5px;
+}
+
+.page-panel {
+    padding: 8px;
+}
