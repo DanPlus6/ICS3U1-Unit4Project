@@ -12,6 +12,7 @@ import { append } from "./function/append.js";
 import { makeElem } from "./function/makeElem.js";
 import { getListHTML } from "./function/getListHTML.js";
 import { validateSrc } from "./function/validateSrc.js";
+import { deleteLastProgram } from "./function/deleteLastProgram.js";
 
 // get the HTML elements
 const SCHOOL_NAME = document.getElementById('schoolName');
@@ -40,6 +41,7 @@ const BTN_ADD_PRIMARY_SOURCE = document.getElementById('btn-addprimsource');
 const BTN_ADD_SECONDARY_SOURCE = document.getElementById('btn-addsecsource');
 const BTN_VERIFY = document.getElementById('btn-verify');
 const BTN_SAVE = document.getElementById('btn-save');
+const BTN_DEL = document.getElementById('btn-delete-last');
 
 /** boolean to determine if the user's program has coop or not */
 let hasCoop = true;
@@ -203,6 +205,7 @@ function attachListeners() {
     BTN_ADD_SECONDARY_SOURCE.addEventListener("click", () => addEditableListItem(SECONDARY_SOURCES, 'secSource'));
     BTN_VERIFY.addEventListener("click",verify);
     BTN_SAVE.addEventListener("click",save);
+    BTN_DEL.addEventListener("click",deleteLastProgram);
 }
 
 /** async callback to run once page loads */
