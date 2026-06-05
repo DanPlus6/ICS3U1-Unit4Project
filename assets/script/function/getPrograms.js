@@ -16,9 +16,11 @@ let programs = null;
  * By: David Fu
  */
 export async function getPrograms() {
+    // check if programs are already fetched
     if (programs) return programs;
-
+    /** Fetch baseline programs */
     const raw = await loadJSON(PATH);
+    /** Fetch locally saved programs */
     const savedPrograms = getLocal();
 
     programs = addArrays(Program.fromJsonArray(raw), Program.fromJsonArray(savedPrograms));

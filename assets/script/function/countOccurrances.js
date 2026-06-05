@@ -10,6 +10,7 @@
  * By: Ian Choy
  */
 export function countOccurrances(anArray, lowestInput, highestInput){
+    /** The amount the event occurs */
     let countAmount = 0;
     //check if there is no highest input
     if (highestInput == 0){

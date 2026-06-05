@@ -8,6 +8,7 @@
  * By: David Fu
  */
 export function pop(arr) {
+    /** Last element in array */
     const lElem = arr[arr.length-1];
     --arr.length;
     return lElem;

@@ -11,7 +11,9 @@ import { makeElem } from "./makeElem.js";
  * By: David Fu
  */
 export function makeDetails(label, value) {
+    /** Paragraph contain label */
     const p = makeElem({tag:'p', htmlContent:`${label}: `});
+    /** Span containing value */
     const span = makeElem({tag:'span', htmlContent:value});
     p.append(span);
 
