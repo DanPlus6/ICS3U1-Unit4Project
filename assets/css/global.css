@@ -127,7 +127,7 @@ button {
     font-family: var(--font-head);
     font-weight: 800;
     cursor: pointer;
-    transition: background 0.18s, transform 0.12s;
+    transition: 0.18s, transform 0.12s;
 }
 
 button:hover {

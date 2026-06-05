@@ -54,10 +54,3 @@ body {
 #btn-addsecsource {
     justify-self: start;
 }
-
-@media (max-width: 720px) {
-    .program-form {
-        grid-template-columns: 1fr;
-        padding: 18px;
-    }
-}
