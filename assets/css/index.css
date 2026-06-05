@@ -40,7 +40,11 @@ section {
 }
 
 .page-panel {
-    padding: 8px;
+    padding: 12px;
+}
+
+.navbar-link {
+    margin: 4px;
 }
 
 .stuco-disclaimer {
