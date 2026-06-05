@@ -1,0 +1,19 @@
+ul {
+    display:grid;
+    justify-content: center;
+    list-style: none;
+}
+
+li {
+    justify-content: center;
+    color:white;
+}
+
+h2 {
+    text-align: center;
+    color:white;
+}
+
+a {
+    color: #f6ae2d;
+}
