@@ -10,7 +10,7 @@
  * `live` for network check,
  * 
  * `img` for image src check
- * @returns {bool} whether or not source is valid
+ * @returns {Promise<boolean>} whether or not source is valid
  */
 export async function validateSrc(src, mode="url") {
     // if source is empty, invalidate immediately
