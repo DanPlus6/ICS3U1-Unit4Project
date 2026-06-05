@@ -5,8 +5,9 @@ import { loadJSON } from "./loadJSON.js";
 import { addArrays } from "./addArrays.js";
 import { getLocal } from "./getLocal.js";
 
+/** path to json file containing baseline research data */
 const PATH = '../../data/programs.json';
-
+/** array to store fetched cumulative programs research data */
 let programs = null;
 
 /** 
@@ -18,6 +19,7 @@ let programs = null;
 export async function getPrograms() {
     // check if programs are already fetched
     if (programs) return programs;
+
     /** Fetch baseline programs */
     const raw = await loadJSON(PATH);
     /** Fetch locally saved programs */
