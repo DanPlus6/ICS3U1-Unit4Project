@@ -4,6 +4,7 @@
 
 'use strict';
 
+// imported programs from toolbox functions
 import { Program } from "./class/Program.js";
 import { getLocal } from "./function/getLocal.js";
 import { sortArray } from "./function/sortArray.js";
