@@ -23,14 +23,14 @@ const BTN_SRCH = document.getElementById("btn-search");
 const P_OUTPUT = document.getElementById("p-output");
 
 /** 
- * array to store all searchable programs
- * @type {Program[]}
+ * array to store all searchable programs with their traversal indexes
+ * @type {[Program, number][]}
  */
 let programs = [];
 
 /** 
  * array to store search results to render
- * @type {Program[]}
+ * @type {[Program, number][]}
  */
 let searchRes = [];
 
@@ -101,6 +101,44 @@ function showMessage(message) {
     P_OUTPUT.append(makeElem({tag:"p", htmlContent:message}));
 }
 
+/**
+ * Converts program/index pairs into an array of programs for rendering
+ * @param {[Program, number][]} pairs program/index pairs
+ * @returns {Program[]} programs from the pairs
+ */
+function getProgramList(pairs) {
+    let programList = [];
+
+    for (let i = 0; i < pairs.length; i++) {
+        append(programList, pairs[i][0]);
+    }
+
+    return programList;
+}
+
+/**
+ * Adds traversal links to rendered program cards
+ * @param {[Program, number][]} pairs program/index pairs represented by the rendered cards
+ */
+function linkRenderedPrograms(pairs) {
+    for (let i = 0; i < P_OUTPUT.children.length; i++) {
+        P_OUTPUT.children[i].style.cursor = "pointer";
+        P_OUTPUT.children[i].title = "Open program details";
+        P_OUTPUT.children[i].addEventListener("click", () => {
+            window.location.href = `traversal.html?idx=${pairs[i][1]}`;
+        });
+    }
+}
+
+/**
+ * Renders matching search results and links each card to the traversal page
+ * @param {[Program, number][]} pairs program/index pairs to render
+ */
+function renderSearchResults(pairs) {
+    renderPrograms(P_OUTPUT, getProgramList(pairs), false);
+    linkRenderedPrograms(pairs);
+}
+
 /** callback to execute the search */
 function execSearch() {
     const searchText = SRCH_IPT.value.toLowerCase().trim();
@@ -111,7 +149,7 @@ function execSearch() {
     searchRes = [];
 
     for (let i = 0; i < programs.length; i++) {
-        if (matchesSearchText(programs[i], searchText) && matchesFilters(programs[i], minTuition, maxTuition, programLength)) {
+        if (matchesSearchText(programs[i][0], searchText) && matchesFilters(programs[i][0], minTuition, maxTuition, programLength)) {
             append(searchRes, programs[i]);
         }
     }
@@ -121,7 +159,7 @@ function execSearch() {
         return;
     }
 
-    renderPrograms(P_OUTPUT, searchRes, false);
+    renderSearchResults(searchRes);
 }
 
 /** callback to swap tuition mode */
@@ -149,7 +187,11 @@ function toggleCoop() {
 
 /** initialization callback  */
 async function init() {
-    programs = await getPrograms();
+    const loadedPrograms = await getPrograms();
+
+    for (let i = 0; i < loadedPrograms.length; i++) {
+        append(programs, [loadedPrograms[i], i]);
+    }
 
     BTN_TT.addEventListener("click", swapTuition);
     BTN_COOP.addEventListener("click", toggleCoop);
