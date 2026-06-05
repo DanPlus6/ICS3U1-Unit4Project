@@ -2,7 +2,7 @@
 
 /**
  * Gets clean HTML for a user-editable list
- * @param {HTMLUListElement} list list to serialize
+ * @param {HTMLUListElement|HTMLOListElement} list list to serialize
  * @returns {string} raw HTML string of list item elements
  * 
  * By David Fu
