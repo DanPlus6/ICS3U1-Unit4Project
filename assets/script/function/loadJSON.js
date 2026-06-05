@@ -1,11 +1,12 @@
+/**
+ * By: David Fu
+ */
 'use strict';
 
 /** 
  * fetch json data from a json file
  * @param {string} path path to json file
  * @returns {Promise<any>} json data from file
- * 
- * By: David Fu
  */
 export async function loadJSON(path) {
     try { // Try to fetch and parse the JSON file from the provided path

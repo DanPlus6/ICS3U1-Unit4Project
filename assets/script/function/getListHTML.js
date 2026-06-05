@@ -1,11 +1,12 @@
+/**
+ * By: David Fu
+ */
 'use strict';
 
 /**
  * Gets clean HTML for a user-editable list
  * @param {HTMLUListElement|HTMLOListElement} list list to serialize
  * @returns {string} raw HTML string of list item elements
- * 
- * By David Fu
  */
 export function getListHTML(list) {
     /** Temporary container for list */

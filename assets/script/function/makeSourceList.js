@@ -1,3 +1,6 @@
+/**
+ * By: David Fu
+ */
 'use strict';
 
 import { makeElem } from "./makeElem.js";
@@ -6,8 +9,6 @@ import { makeElem } from "./makeElem.js";
  * Creates a list of research source links
  * @param {string[]|string} sources array of source urls
  * @returns {HTMLUListElement} list containing source links
- * 
- * By: David Fu
  */
 export function makeSourceList(sources) {
     /** List to add resource links to */

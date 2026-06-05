@@ -1,3 +1,6 @@
+/**
+ * By: David Fu
+ */
 'use strict';
 
 import { sortArray } from "./sortArray.js";
@@ -7,8 +10,6 @@ import { pop } from "./pop.js";
  * Removes all the duplicated data in an array
  * @param {Array} arr An array to remove duplicates from
  * @returns The array with no duplicate data
- * 
- * By: David Fu
  */
 export function removeDuplicates(arr) {
     // sort array first to make it easier to find duplicate elements

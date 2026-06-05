@@ -1,7 +1,6 @@
 /**
- * By Ian Choy and David Fu
+ * By: Ian Choy and David Fu
  */
-
 'use strict';
 
 // import programs from toolbox functions

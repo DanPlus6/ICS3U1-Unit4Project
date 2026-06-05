@@ -1,7 +1,6 @@
 /**
- * By David Fu
+ * By: David Fu
  */
-
 'use strict';
 
 // import programs from toolbox functions

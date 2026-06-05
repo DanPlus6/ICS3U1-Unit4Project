@@ -1,10 +1,11 @@
+/**
+ * By: Ian Choy and David Fu
+ */
 'use strict';
 
 /**
  * Sorts an array in ascending order, in-place, using selection sort algorithm
  * @param {Array} arr 
- * 
- * By: David Fu and Ian Choy
  */
 export function sortArray(arr) {
     // iterate through array

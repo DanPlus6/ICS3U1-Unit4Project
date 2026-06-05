@@ -1,3 +1,6 @@
+/**
+ * By: David Fu
+ */
 'use strict';
 
 import { Program } from "../class/Program.js";
@@ -13,8 +16,6 @@ let programs = null;
 /** 
  * Gets all the programs research data as an array of 'Program' objects
  * @returns {Promise<Program[]>} array containing all the program research data
- * 
- * By: David Fu
  */
 export async function getPrograms() {
     // check if programs are already fetched

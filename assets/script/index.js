@@ -1,8 +1,7 @@
-'use strict';
-
 /**
  * By: David Fu
  */
+'use strict';
 
 // Stores the small disclaimer image that opens the overlay.
 const disclaimerTrigger = document.getElementById("stuco-disclaimer-trigger");

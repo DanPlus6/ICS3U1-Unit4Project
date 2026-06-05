@@ -1,3 +1,6 @@
+/**
+ * By: David Fu
+ */
 'use strict';
 
 /**
@@ -11,8 +14,6 @@
  * @param {string} [args.href] optional link reference to assign to element
  * @param {string} [args.alt] optional alt text to assign to element
  * @returns {HTMLElement} target to created html element
- * 
- * By: David Fu
  */
 export function makeElem({tag, className, id, htmlContent, src, href, alt}) {
     /** 

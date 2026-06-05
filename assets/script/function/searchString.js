@@ -1,3 +1,6 @@
+/**
+ * By: David Fu
+ */
 'use strict';
 
 /**
@@ -5,8 +8,6 @@
  * @param {string} txt Text to search in
  * @param {string} pat Pattern to search for in text
  * @returns {number[]} all indices in text where pattern match is found
- *
- * By: David Fu
  */
 export function searchString(txt, pat) {
     // Construct LPS

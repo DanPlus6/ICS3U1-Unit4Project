@@ -1,3 +1,6 @@
+/**
+ * By: David Fu
+ */
 'use strict';
 
 import { makeElem } from "./makeElem.js";
@@ -7,8 +10,6 @@ import { makeElem } from "./makeElem.js";
  * @param {string} label field label
  * @param {string} value field value
  * @returns {HTMLParagraphElement} paragraph containing the label and value
- * 
- * By: David Fu
  */
 export function makeDetails(label, value) {
     /** Paragraph contain label */

@@ -1,11 +1,12 @@
+/**
+ * By: David Fu
+ */
 'use strict';
 
 import { getLocal } from "./getLocal.js";
 
 /**
  * Deletes the last saved program from local storage after confirmation
- * 
- * By: David Fu
  */
 export function deleteLastProgram() {
     /** fetch local programs */
