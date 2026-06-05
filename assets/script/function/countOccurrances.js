@@ -16,6 +16,7 @@ export function countOccurrances(anArray, lowestInput, highestInput){
     if (highestInput == 0){
         //traverse through the array to count the amount of times the array element is equal to the lowest bound
         for (let i; i < anArray.length; i++){
+            // check if the current element is equal to the lowestInput
             if (anArray[i] == lowestInput){
                 countAmount++;
             }
@@ -24,6 +25,7 @@ export function countOccurrances(anArray, lowestInput, highestInput){
     else {
          //traverse through the array to count the amount of times the array element is inside the ranges
         for (let i; i < anArray.length; i++){
+            // check if the current element is inside the range between highest and lowest input
             if (anArray[i] >= lowestInput && anArray[i] <= highestInput){
                 countAmount++;
             }
