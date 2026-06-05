@@ -1,72 +1,68 @@
 'use strict';
 
 /**
- * Searches for occurences of a pattern in a text using the Knuth–Morris–Pratt algorithm
+ * Searches for occurrences of a pattern in a text using the Knuth–Morris–Pratt algorithm
  * @param {string} txt Text to search in
  * @param {string} pat Pattern to search for in text
  * @returns {number[]} all indices in text where pattern match is found
- * 
+ *
  * By: David Fu
  */
 export function searchString(txt, pat) {
     // Construct LPS
-    /** longest prefix sum array for string searching */
+    /** longest proper prefix which is also a suffix array */
     const lps = new Array(pat.length);
     /** length of longest prefix which is also a suffix for the previous index */
     let len = 0;
 
     lps[0] = 0;
-    
-    let i = 1;
-    while (i < pat.length) {
-        // if there is pattern match, increment lps size
+
+    // iterate through each character of the pattern (starting at 1 since lps[0] is always 0)
+    for (let i = 1; i < pat.length;) {
+        // if current pattern character matches the character at the current prefix length
         if (pat[i] === pat[len]) {
+            // extend the matching prefix-suffix and record its length at this position
             ++len;
             lps[i] = len;
             ++i;
-        }
-        // If mismatch of pattern occurs
-        else {
-            // set len to the previous lps value to avoid redundant comparisons if longest prefix len is 0
+        } else {
+            // if there's a mismatch but we have a non-zero prefix length to fall back to
             if (len !== 0) {
-                len = lps[len-1];
-            } 
-            // if no matching prefix, set lps[i] to 0
-            else {
+                // fall back using the lps of the previous index to try a shorter prefix
+                len = lps[len - 1];
+            } else {
+                // no prefix to fall back on, so lps at this position is 0; advance to next character
                 lps[i] = 0;
                 ++i;
             }
         }
     }
-    
+
     // Search
     const res = [];
 
-    /** primary iterator for traversing the text */
-    let i = 0;
-    /** secondary iterator for traversing the pattern */
-    let j = 0;
-    // iterate through text
+    let i = 0; // primary iterator for traversing the text
+    let j = 0; // secondary iterator for traversing the pattern
+
+    // iterate through each character of the text
     while (i < txt.length) {
-        // if characters match, move both iterators forward
+        // if the current text and pattern characters match, advance both iterators
         if (txt[i] === pat[j]) {
             ++i;
             ++j;
 
-            // check if entire pattern is matched to store the start index in result
-            if (j === m) {
-                res.push(i-j);
-                
-                // Use LPS of previous index to skip unnecessary comparisons
+            // if j has reached the end of the pattern, a full match was found
+            if (j === pat.length) {
+                // record the start index of the match, then use lps to skip redundant comparisons
+                res.push(i - j);
                 j = lps[j - 1];
             }
-        }
-        // check if there is a mismatch
-        else {
-            // use lps value of previous index to avoid redundant comparisons
+        } else {
+            // mismatch: if j is non-zero, fall back using lps to avoid redundant comparisons
             if (j !== 0)
-                j = lps[j-1];
+                j = lps[j - 1];
             else
+                // j is already 0, so no fallback is possible; advance to the next text character
                 ++i;
         }
     }
