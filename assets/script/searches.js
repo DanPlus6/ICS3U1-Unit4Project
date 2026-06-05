@@ -264,12 +264,12 @@ function toggleSort() {
     sortAscending = !sortAscending;
 
     // update button label
-    const dirLabel = BTN_SORT.querySelector(".sort-dir");
+    const icon = BTN_SORT.querySelector(".sort-icon");
 
     if (sortAscending) { // check sorting type and swap it
-        dirLabel.textContent = "A~Z";
+        icon.textContent = "↑";
     } else {
-        dirLabel.textContent = "Z~A";
+        icon.textContent = "↓";
     }
 
     // Re-run search so rendering updates immediately
