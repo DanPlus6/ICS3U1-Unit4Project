@@ -19,8 +19,7 @@ export function searchString(txt, pat) {
 
     // iterate through each character of the pattern (starting at 1 since lps[0] is always 0)
     for (let i = 1; i < pat.length;) {
-        // if current pattern character matches the character at the current prefix length
-        if (pat[i] === pat[len]) {
+        if (pat[i] === pat[len]) { // if current pattern character matches the character at the current prefix length
             // extend the matching prefix-suffix and record its length at this position
             ++len;
             lps[i] = len;
@@ -30,8 +29,7 @@ export function searchString(txt, pat) {
             if (len !== 0) {
                 // fall back using the lps of the previous index to try a shorter prefix
                 len = lps[len - 1];
-            } else {
-                // no prefix to fall back on, so lps at this position is 0; advance to next character
+            } else { // otherwise no prefix to fall back on, so lps at this position is 0; advance to next character
                 lps[i] = 0;
                 ++i;
             }
@@ -41,29 +39,25 @@ export function searchString(txt, pat) {
     // Search
     const res = [];
 
-    let i = 0; // primary iterator for traversing the text
-    let j = 0; // secondary iterator for traversing the pattern
+    /** primary iterator for traversing the text */
+    let i = 0; 
+    /** secondary iterator for traversing the pattern */
+    let j = 0;
 
     // iterate through each character of the text
     while (i < txt.length) {
-        // if the current text and pattern characters match, advance both iterators
-        if (txt[i] === pat[j]) {
+        if (txt[i] === pat[j]) { // check if the current text and pattern characters match, advance both iterators
             ++i;
             ++j;
 
-            // if j has reached the end of the pattern, a full match was found
-            if (j === pat.length) {
+            if (j === pat.length) { // if j has reached the end of the pattern, a full match was found
                 // record the start index of the match, then use lps to skip redundant comparisons
                 res.push(i - j);
                 j = lps[j - 1];
             }
         } else {
-            // mismatch: if j is non-zero, fall back using lps to avoid redundant comparisons
-            if (j !== 0)
-                j = lps[j - 1];
-            else
-                // j is already 0, so no fallback is possible; advance to the next text character
-                ++i;
+            if (j !== 0) j = lps[j - 1]; // if j is non-zero (mismatch), fall back using lps to avoid redundant comparisons
+            else ++i; // j is already 0, so no fallback is possible; advance to the next text character
         }
     }
 
