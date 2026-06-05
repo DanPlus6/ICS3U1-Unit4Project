@@ -3,7 +3,7 @@
 /** 
  * fetch json data from a json file
  * @param {string} path path to json file
- * @returns {string} json data from file
+ * @returns {Promise<any>} json data from file
  * 
  * By: David Fu
  */
