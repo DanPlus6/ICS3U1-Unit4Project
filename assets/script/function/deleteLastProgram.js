@@ -1,6 +1,5 @@
 'use strict';
 
-// Import essential functions from function toolbox
 import { getLocal } from "./getLocal.js";
 
 /**
