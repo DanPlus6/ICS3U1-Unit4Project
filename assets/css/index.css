@@ -17,3 +17,11 @@ h2 {
 a {
     color: #f6ae2d;
 }
+
+a:hover{
+    color:#c88a1a;
+}
+
+h2:hover{
+    background-color: #c88a1a80;
+}
