@@ -4,7 +4,7 @@ import { makeElem } from "./makeElem.js";
 
 /**
  * Creates a list of research source links
- * @param {string[]} sources array of source urls
+ * @param {string[]|string} sources array of source urls
  * @returns {HTMLUListElement} list containing source links
  * 
  * By: David Fu
