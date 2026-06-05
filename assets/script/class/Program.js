@@ -3,7 +3,7 @@
 export class Program {
     /** 
      * object to store research for an university program 
-     * @param {string} data raw json research data
+     * @param {object} data raw json research data
      */
     constructor(data) {
         this.schoolName = data.schoolName;
@@ -48,7 +48,7 @@ export class Program {
 
     /** 
      * callback to convert raw json data into a Program class
-     * @param {string} data raw json data
+     * @param {object} data raw json data
      * @returns {Program} a new Program class from raw data
      */
     static fromJson(data) {
@@ -57,7 +57,7 @@ export class Program {
 
     /** 
      * function to convert organized json array into array of Program objects
-     * @param {string[]} jsonArr array of raw json data
+     * @param {object[]} jsonArr array of raw json data
      * @returns {Program[]} parsed array of Program objects
      */
     static fromJsonArray(jsonArr) {
