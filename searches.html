@@ -10,33 +10,45 @@
     <title>Program Searching</title>
 </head>
 <body>
-    <div>
-        <div class="search-bar">
-            <input type = "text", id = "txt-input" placeholder="Search for a program...">
-            <button onclick="execSearch()"><img src="assets/img/search_button.png"></button>
-            <div>
-                <button onclick = "showPartialSearch();">Partial Search</button>
-                <button onclick = "showCoop();">Co-op</button>
-                <button onclick = "showNonCoop()">Non Co-op</button>
-                <button onclick = "showLength();">Length of Program</button>
+    <main class="search-page">
+        <section class="page-header">
+            <p class="eyebrow">Program Search</p>
+            <h1>Find University Programs</h1>
+            <p class="intro">Search by school, program, co-op availability, tuition range, or program length.</p>
+        </section>
+
+        <section class="search-panel page-panel">
+            <div class="search-bar">
+                <input type="text" id="txt-input" placeholder="Search for a program...">
+                <button type="button" class="search-button" onclick="execSearch()" aria-label="Search programs">
+                    <img src="assets/img/search_button.png" alt="">
+                </button>
             </div>
-        </div>
-        <div>
-            <div>
-                <input type = "number", id = "tt-upper-bound" placeholder="Upperbound of Tuition">
-                <input type = "number", id = "tt-lower-bound" placeholder="Lowerbound of Tuition">
+
+            <div class="search-tabs" aria-label="Search modes">
+                <button type="button" class="ghost" onclick="showPartialSearch();">Partial Search</button>
+                <button type="button" class="ghost" onclick="showCoop();">Has Co-op: Yes</button>
+                <button type="button" class="ghost" onclick="showLength();">Length of Program</button>
             </div>
-            <div>
-                <button onclick = "swapTuitionMode();" id="btn-swap-tuition">Domestic Tuition</button>
+
+            <div class="filter-grid">
+                <div class="filter-group">
+                    <input type="number" id="tt-lower-bound" placeholder="Lowerbound of Tuition">
+                    <input type="number" id="tt-upper-bound" placeholder="Upperbound of Tuition">
+                    <button type="button" class="secondary" onclick="swapTuitionMode();" id="btn-swap-tuition">Domestic Tuition</button>
+                </div>
+
+                <div class="filter-group">
+                    <input type="number" id="program-length" placeholder="Length of Program">
+                </div>
             </div>
-        </div>
-        <div>
-            <input type = "number", id = "program-length" placeholder="Length of Program">
-        </div>
-        <div>
-            <p id = "p-output"></p>
-        </div>
-    </div>
+        </section>
+
+        <section class="results-section">
+            <h2>Search Results</h2>
+            <div id="p-output" class="results-grid"></div>
+        </section>
+    </main>
     <script type="module" src="assets/script/searches.js"></script>
 </body>
 </html>
