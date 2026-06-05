@@ -16,6 +16,7 @@ import { renderPrograms } from "./function/renderPrograms.js";
  */
 let programs = [];
 
+/** get url parameters passed when requesting site */
 const urlParams = new URLSearchParams(window.location.search);
 /** index for traversing through the programs */
 let idx = Number.parseInt(urlParams.get('idx'), 10);
