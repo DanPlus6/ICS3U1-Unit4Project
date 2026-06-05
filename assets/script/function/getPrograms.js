@@ -12,7 +12,7 @@ let programs = null;
 
 /** 
  * Gets all the programs research data as an array of 'Program' objects
- * @returns {Program[]} array containing all the program research data
+ * @returns {Promise<Program[]>} array containing all the program research data
  * 
  * By: David Fu
  */
