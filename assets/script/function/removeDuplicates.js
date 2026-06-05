@@ -1,6 +1,7 @@
 'use strict';
 
-import { pop } from './pop.js';
+import { sortArray } from "./sortArray.js";
+import { pop } from "./pop.js";
 
 /**
  * Removes all the duplicated data in an array
