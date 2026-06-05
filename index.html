@@ -25,5 +25,37 @@
             <li><a href = "edit_programs.html"><h2>Edit Programs</h2></a></li>
         </ul>
     </section>
+
+    <img class="stuco-disclaimer" id="stuco-disclaimer-trigger" src="assets/img/stuco-website-disclaimer.png" alt="Student council website disclaimer" role="button" aria-label="Open student council website disclaimer" tabindex="0">
+
+    <div class="disclaimer-overlay" id="disclaimer-overlay" aria-hidden="true">
+        <button class="disclaimer-close" id="disclaimer-close" type="button" aria-label="Close disclaimer">X</button>
+        <img src="assets/img/stuco-website-disclaimer.png" alt="Student council website disclaimer">
+    </div>
+
+    <script>
+        const disclaimerTrigger = document.getElementById("stuco-disclaimer-trigger");
+        const disclaimerOverlay = document.getElementById("disclaimer-overlay");
+        const disclaimerClose = document.getElementById("disclaimer-close");
+
+        function openDisclaimer() {
+            disclaimerOverlay.classList.add("is-visible");
+            disclaimerOverlay.setAttribute("aria-hidden", "false");
+        }
+
+        function closeDisclaimer() {
+            disclaimerOverlay.classList.remove("is-visible");
+            disclaimerOverlay.setAttribute("aria-hidden", "true");
+        }
+
+        disclaimerTrigger.addEventListener("click", openDisclaimer);
+        disclaimerTrigger.addEventListener("keydown", (event) => {
+            if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                openDisclaimer();
+            }
+        });
+        disclaimerClose.addEventListener("click", closeDisclaimer);
+    </script>
 </body>
 </html>
