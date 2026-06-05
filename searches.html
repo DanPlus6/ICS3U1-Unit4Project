@@ -31,8 +31,9 @@
                 <span class="filter-label">Filters:</span>
 
                 <div class="filter-control">
+                    <input type="checkbox" id="filter-coop" aria-label="Apply co-op filter">
                     <details class="filter-menu">
-                        <summary><input type="checkbox" id="filter-coop" aria-label="Apply co-op filter">Co-op</summary>
+                        <summary>Co-op</summary>
                         <div class="filter-menu-content">
                             <button type="button" class="ghost" onclick="toggleCoop();">Has Co-op: Yes</button>
                         </div>
@@ -40,8 +41,9 @@
                 </div>
 
                 <div class="filter-control">
+                    <input type="checkbox" id="filter-tuition" aria-label="Apply tuition filter">
                     <details class="filter-menu">
-                        <summary><input type="checkbox" id="filter-tuition" aria-label="Apply tuition filter">Tuition</summary>
+                        <summary>Tuition</summary>
                         <div class="filter-menu-content tuition-menu-content">
                             <input type="number" id="tt-lower-bound" placeholder="Minimum Tuition">
                             <input type="number" id="tt-upper-bound" placeholder="Maximum Tuition">
@@ -51,8 +53,9 @@
                 </div>
 
                 <div class="filter-control">
+                    <input type="checkbox" id="filter-length" aria-label="Apply program length filter">
                     <details class="filter-menu">
-                        <summary><input type="checkbox" id="filter-length" aria-label="Apply program length filter">Program Length</summary>
+                        <summary>Program Length</summary>
                         <div class="filter-menu-content">
                             <input type="number" id="program-length" placeholder="Length of Program">
                         </div>
