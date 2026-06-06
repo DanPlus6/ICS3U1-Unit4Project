@@ -23,11 +23,4 @@ function closeDisclaimer() {
 }
 
 disclaimerTrigger.addEventListener("click", openDisclaimer);
-document.addEventListener("keydown", (event) => {
-    // Check if the user pressed Enter or Space to open the disclaimer without a mouse.
-    if (event.key === "Enter" || event.key === " " || event.key === 'Escape') {
-        event.preventDefault();
-        openDisclaimer();
-    }
-});
 disclaimerClose.addEventListener("click", closeDisclaimer);
